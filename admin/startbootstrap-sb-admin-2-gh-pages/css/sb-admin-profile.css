@@ -1,6 +1,6 @@
 
 body {
-    background: rgb(99, 39, 120)
+    background: rgb(80, 196, 231)
 }
 
 .form-control:focus {
@@ -9,7 +9,7 @@ body {
 }
 
 .profile-button {
-    background: rgb(99, 39, 120);
+    background: rgb(73, 149, 211);
     box-shadow: none;
     border: none
 }
@@ -38,8 +38,8 @@ body {
 }
 
 .add-experience:hover {
-    background: #BA68C8;
+    background: #4a4cbd;
     color: #fff;
     cursor: pointer;
-    border: solid 1px #BA68C8
+    border: solid 1px #4a4cbd
 }
