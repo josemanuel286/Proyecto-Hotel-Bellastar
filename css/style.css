@@ -3,6 +3,10 @@
 /* ================================================= */
 
 * {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -687,7 +691,7 @@ h6 {
     margin-bottom: 20px;
 }
 
-#about .content-col a {
+#reservar {
     display: inline-block;
     background: #FFD700;
     font-weight: 400;
@@ -1387,4 +1391,82 @@ input::-ms-input-placeholder {
 #footer p {
     margin: 0;
     font-size: 18px;
+}
+
+/* ================================================= */
+/* --------------- Mejora Restaurante -------------- */
+/* ================================================= */
+
+.wrap{
+    width: 800px;
+    max-width: 90%;
+    margin: 90px auto;
+}
+
+ul.tabs{
+    width: 100%;
+    background: #363636;
+    list-style: none;
+    display: flex;
+}
+
+ul.tabs li{
+    width: 18%;
+}
+
+ul.tabs li a{
+    color: #ffd700;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: center;
+
+    display: block;
+    padding: 20px 0px;
+}
+
+ul.tabs li a:hover{
+    color: #ffffff;
+}
+
+.active{
+    background: none;
+}
+
+ul.tabs li a .tab-text{
+    margin-left: 9px;
+}
+
+.secciones{
+    width: 100%;
+    background: #ffffff;
+}
+
+.secciones article{
+    padding: 30px;
+}
+
+.secciones article p{
+    text-align: justify;
+}
+
+@media screen and (max-width: 700px) {
+    ul.tabs li{
+        width: none;
+        flex-basis: 0;
+        flex-grow: 1;
+    } 
+}
+
+@media screen and (max-width: 450px){
+    ul.tabs li a{
+        padding: 15px 0px;
+    }
+
+    ul.tabs li a .tab-text{
+        display: none;
+    }
+
+    .secciones article{
+        padding: 20px;
+    }
 }
