@@ -81,8 +81,5 @@ $(document).ready(function(){
         });
 
     });
-<<<<<<< HEAD
 
-=======
->>>>>>> main
 })(jQuery);
