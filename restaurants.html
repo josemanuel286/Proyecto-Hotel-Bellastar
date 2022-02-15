@@ -2,7 +2,13 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <title>BELLASTAR</title>
+        <link rel="stylesheet" href="css/estilos.css">
+        <link rel="stylesheet" href="font-awesome.css">
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="js/main.js"></script>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
         <meta content="" name="description">
@@ -30,17 +36,15 @@
         <!-- Header Section Start -->
         <header id="header">
             <a href="index.html" class="logo"><img src="img/logo.jpg" alt="logo"></a>
-            <div class="phone"><i class="fa fa-phone"></i>+1 234 567 8900</div>
+            <div class="phone"><i class="fa fa-phone"></i>+52 1 998 242 2755</div>
             <div class="mobile-menu-btn"><i class="fa fa-bars"></i></div>
             <nav class="main-menu top-menu">
                 <ul>
                     <li class="active"><a href="index.html">Menú</a></li>
-                    <li><a href="about.html">Nosotros</a></li>
+                    </li><li><a href="about.html">Nosotros</a></li>
                     <li><a href="room.html">Cuartos</a></li>
-                    <li><a href="amenities.html">Comodidades</a></li>
-                    <li><a href="booking.html">Reservaciones</a></li>
                     <li><a href="restaurants.html">Restaurantes</a></li>
-                    <li><a href="login.html">Registro</a></li>
+                    <li><a href="promotions.html">Promociones</a></li>
                     <li><a href="contact.html">contactanos</a></li>
                 </ul>
             </nav>
@@ -51,48 +55,96 @@
         <div id="about">
             <div class="container">
                 <div class="section-header">
-                    <h2>Restaurantes</h2>
+                    <h1>Restaurantes</h1>
                     <p>
                         Nuestros restaurantes de certificación.
                     </p>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 img-cols">
-                        <div class="img-col">
-                            <img class="img-fluid" src="img/restaurants/carnival.jpg">
-                        </div>
-                    </div>
-                    <div class="col-md-6 content-cols">
-                        <div class="content-col">
-                            <h3>Carnival</h3>
-                            <p>
-                                Restaurantes de cortes.
-                            <p>
-                                Este restaurante es de certificación de cortes famosos, como tipos de carnes.
-                            </p>
-                            <a href="#">Reservar</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <hr>
-                
-                        <div class="row">
-                            <div class="col-md-6 img-cols">
-                                <div class="img-col">
-                                    <img class="img-fluid" src="img/restaurants/ceviches.jpg">
-                                </div>
-                            </div>
-                            <div class="col-md-6 content-cols">
-                                <div class="content-col">
-                                    <h3>Rossmarinos</h3>
-                                    <p>
-                                        Restaurantes de cortes.
-                                    <p>
-                                        Este restaurante es de certificación de cortes famosos, como tipos de carnes.
-                                    </p>
-                                    <a href="#">Reservar</a>
-                                </div>
-                            </div>
-                        </div>
+                </div>  
+        <div class="wrap">
+            <ul class="tabs">
+                <li><a href="#tab1"><span class="fa fa-star"></span><span class="tab-text">CARNIVAL</span></a></li>
+                <li><a href="#tab2"><span class="fa fa-cutlery"></span><span class="tab-text">PLATILLO F</span></a></li>
+            </ul>
+    
+            <div class="secciones">
+                <article id="tab1">
+                    <h1>Restaurante de Cortes</h1>
+                    <p>Carnibal es un lugar para compartir momentos únicos. Es una experiencia gastronómica como ninguna otra. Deja volar tu imaginación con
+                        deliciosos aromas y sabores. En Carnibal la innovación y la creatividad son las que nos guían cada día. Nuestro chef se esfuerza por 
+                        crear exquisitos platos nuevos y emocionantes con algunos de los ingredientes más frescos y puros.</p>
+    
+                        <img src="img/restaurants/carnival.jpg">
                         
+                        <div id="reservar">
+                            <a href="booking.html">RESERVAR</a>
+                        </div>
+    
+                </article>
+                <article id="tab2">
+                    <h1>Platillos Fuertes</h1>
+                    <hr>
+                    <p>ACEITUNAS MARINADAS<br>
+                    Aceituna sin hueso marinadas con jugo de naranja, limon y especies.</p>
+                    <p>CREVETTES DE PROVENCE<br>
+                    Camarones fritos. sazonados con especies y harissa.</p>
+                    <p>KEFTDAKIA<br>
+                    Albondigas de pescado con pimenton dulce y semillas de cilantro.</p>
+                    <p>TAPENADE<br>
+                    Pasta suave de aceitunas negras y alcaparras, se acompaña con pan pita.</p>
+                    <p>TZATZIKI<br>
+                    Crema suave de jocoque con eneldo, menta y pepino.</p>
+                </article>
+            </div>
+        </div>
+
+        <div class="wrap">
+            <ul class="tabs">
+                <li><a href="#tab3"><span class="fa fa-star"></span><span class="tab-text">PENDIENTE</span></a></li>
+                <li><a href="#tab4"><span class="fa fa-cutlery"></span><span class="tab-text">PLATILLO F</span></a></li>
+            </ul>
+    
+            <div class="secciones">
+                <article id="tab3">
+                    <h1>Restaurante Frances</h1>
+                    <p>Carnibal es un lugar para compartir momentos únicos. Es una experiencia gastronómica como ninguna otra. Deja volar tu imaginación con
+                        deliciosos aromas y sabores. En Carnibal la innovación y la creatividad son las que nos guían cada día. Nuestro chef se esfuerza por 
+                        crear exquisitos platos nuevos y emocionantes con algunos de los ingredientes más frescos y puros.</p>
+
+                        <img src="img/restaurants/carnival.jpg">
+                        
+                        <div id="reservar">
+                            <a href="booking.html">RESERVAR</a>
+                        </div>
+
+                </article>
+                <article id="tab4">
+                    <h1>Platillos Fuertes</h1>
+                    <hr>
+                    <p>Carnibal es un lugar para compartir momentos únicos. Es una experiencia gastronómica como ninguna otra. Deja volar tu imaginación con
+                        deliciosos aromas y sabores. En Carnibal la innovación y la creatividad son las que nos guían cada día. Nuestro chef se esfuerza por 
+                        crear exquisitos platos nuevos y emocionantes con algunos de los ingredientes más frescos y puros.</p>
+                </article>
+            </div>
+        </div>
+        <!-- Restaurants Section End -->
+
+        <!-- Footer Section Start -->
+        <div id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="social">
+                            <a href="https://www.facebook.com/CodeWorld-115222261073712"><li class="fa fa-facebook-f"></li></a>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <p>Copyright &#169; 2045 <a href="">Bellastar</a> All Rights Reserved.</p>
+						
+						<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+						<p>Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>    
+        <!-- Footer Section End -->
