@@ -198,46 +198,21 @@
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
-                                        <tr>
-                                            <th>Fecha</th>
-                                            <th>Hora</th>
-                                            <th>Nombre</th>
-                                            <th>Apellidos</th>
-                                            <th>No. de personas</th>
-                                            <th>Acciones</th>
-                                        </tr>
+                                        <th>Nombre</th>
+                                        <th>Apellido</th>
+                                        <th>Telefono</th>
+                                        <th>Email</th>
+                                        <th>Dia u Hora</th>        
+                                        <th>Solicitud especial</th>
+                                        <th>Acciones</th>
+                                        </tr>    
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Fecha</th>
-                                            <th>Hora</th>
-                                            <th>Nombre</th>
-                                            <th>Apellidos</th>
-                                            <th>No. de personas</th>
-                                            <th>Acciones</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <tr>
-                                            <td>18/02/2022</td>
-                                            <td>18:45</td>
-                                            <td>Alejandro</td>
-                                            <td>Jodorovsky</td>
-                                            <td>4</td>
-                                            <td>
-                                                <a id="editBtn" href="#"> <i class="fas fa-edit"></i> </a>
-                                                <a id="deleteBtn" href="#"> <i class="fas fa-user-times"></i> </a>
-                                                <a id="readBtn" href="#"> <i class="fas fa-eye"></i> </a>                                             
-                                                
-                                            </td>
-                                                
-                                        </tr>
-                                    </tbody>
+                                    <tbody id="data">
+                                </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <!-- /.container-fluid -->
 
@@ -285,6 +260,35 @@
         </div>
     </div>
 
+    <!--Tabla Datos-->
+    <script>
+        let url = "https://apicodeword12.herokuapp.com/booking/"
+        fetch (url)
+            .then(response => response.json())
+            .then(data => mostrarData(data))
+            .catch(error => console.log(error))
+
+        const mostrarData = (data) => {
+            console.log(data.results)
+            let body = ''
+            for (let i = 0; i<data.results.length; i++){
+            body+=`
+                <tr><td>${data.results[i].nombre_usuario}</td>
+                <td>${data.results[i].apellido_usuario}</td>
+                <td>${data.results[i].telefono}</td>
+                <td>${data.results[i].email}</td>
+                <td>${data.results[i].dia_hora_booking}</td>
+                <td>${data.results[i].solicitud_especial}</td>
+                <td> 
+                <a id="editBtn" href="#"> <i class="fas fa-edit"></i> </a>
+                <a id="deleteBtn" href="#"> <i class="fas fa-user-times"></i> </a>
+                <a id="readBtn" href="#"> <i class="fas fa-eye"></i> </a></td> </tr>
+                `
+            }
+            document.getElementById('data').innerHTML = body
+        }
+    </script>
+    
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
