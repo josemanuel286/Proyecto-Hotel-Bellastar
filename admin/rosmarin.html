@@ -196,33 +196,28 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Menú</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Datos de usuario</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Nombre</th>
+                                            <th>Platillo</th>
                                             <th>Descripción</th>
-                                            <th>imagen</th>
-                                            <th>acciones</th>
+                                            <th>Acciones</th>
+
                                         </tr>
                                     </thead>
                                     <tfoot>
-                                    <tbody>
+                                        <th>Platillo</th>
+                                        <th>Descripción</th>
+                                        <th>Acciones</th>
+                                    </tfoot>
                                         <tr>
-                                            <td>almejas</td>
-                                            <td>almejas con cilantro</td>
-                                            <td>img</td>
-                                            <td>
-                                                <a id="editBtn" href="#"> <i class="fas fa-edit"></i> </a>
-                                                <a id="deleteBtn" href="#"> <i class="fas fa-user-times"></i> </a>
-                                                <a id="readBtn" href="#"> <i class="fas fa-eye"></i> </a>                                             
-                                                
-                                            </td>
-                                                
-                                        </tr>
+                                    <tbody id="dataDataTable">
+                                        <tr>
+
                                     </tbody>
                                 </table>
                             </div>
@@ -230,6 +225,8 @@
                     </div>
 
                 </div>
+
+            </div>
                 <!-- /.container-fluid -->
 
             </div>
@@ -239,7 +236,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; UNID Cancún 2022</span>
+                        <span>Copyright &copy; UNID cancún</span>
                     </div>
                 </div>
             </footer>
@@ -292,6 +289,29 @@
 
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
+    <script>
+        let url = "https://apicodeword12.herokuapp.com/menu/"
+        fetch(url)
+            .then(response => response.json())
+            .then(data => mostrarData(data))
+            .catch(error => console.log(error))
+    
+        const mostrarData = (data) => {
+            console.log(data.results)
+            let body = ''
+            for (let i = 0 ; i<data.results.length; i++){
+            body += `
+                <tr><td>${data.results[i].nombre_platillo}</td>
+                <td>${data.results[i].ingredientes}</td>
+                <td> 
+                <a id="editBtn" href="#"> <i class="fas fa-edit"></i> </a>
+                <a id="deleteBtn" href="#"> <i class="fas fa-user-times"></i> </a>
+                <a id="readBtn" href="#"> <i class="fas fa-eye"></i> </a></td> </tr>
+                `
+            }
+            document.getElementById('dataDataTable').innerHTML = body
+        }
+    </script>
 
 </body>
 
