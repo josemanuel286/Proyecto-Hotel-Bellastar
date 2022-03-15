@@ -53,7 +53,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <div class="booking-form">
+                        <div class="booking-form" id="myForm">
                             <div id="success"></div>
                             <form name="sentMessage" id="bookingForm" novalidate="novalidate">
                                 <div class="form-row">
@@ -83,16 +83,39 @@
                                 <div class="form-row">
                                     <div class="control-group col-md-6">
                                         <label>Dia y hora de reservación</label><br>
-                                        <input type="datetime-local">
+                                        <input type="datetime-local" id="datetime">
                                         <p class="help-block text-danger"></p>
                                     </div>
-                                    <div>
+                                    <div class="control-group col-md-3">
                                         <label>Selecciona tu restaurante</label>
                                         <br>
-                                        <select name="restaurante_select" id="selection">
-                                            <option value="c">selecciona</option>
+                                        <select name="restaurante_select" id="Rselection">
+                                            <option value="0">selecciona</option>
                                             <option value="a">Rosmarin</option>
-                                            <option value="b">frances</option>
+                                            <option value="b">Frances</option>
+                                        </select>
+                                    </div>
+                                    <div class="control-group col-md-3">
+                                        <label>Número de Personas</label>
+                                        <br>
+                                        <select name="restaurante_select" id="number_people">
+                                            <option value="0">selecciona</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
                                         </select>
                                     </div>
                                 </div>
@@ -152,5 +175,75 @@
   
         <!-- Main Javascript File -->
         <script src="js/main.js"></script>
+
+        <!--                        
+
+            const myForm = document.getElementById('myForm')
+            myForm.addEventListener('submit', function (e) {
+
+                                data.append('nombre_usuario', fname);
+                data.append('apellido_usuario', lname);
+                data.append('telefono', mobile);
+                data.append('email', email);
+                data.append('dia_hora_booking', datetime);
+                data.append('solicitud_especial', request);
+                data.append('number_people', number_people);
+                data.append('restaurante_id', Rselection);
+
+            */ -->
+
+            <script>
+            $("#submitForm").click(async function(e){
+                e.preventDefault()
+                let nombre_usuario = $('fname').val();
+                let apellido_usuario = $('lname').val();
+                let telefono = $('mobile').val();
+                let email = $('email').val();
+                let dia_hora_booking = $('datetime').val();
+                let solicitud_especial = $('request').val();
+                let number_people = $('number_people').val();
+                let restaurante_id = $('Rselection').val();
+
+                const json = await fetch('https://apicodeword12.herokuapp.com/booking/',{
+
+                    method: 'POST',
+                    body: JSON.stringify({
+                        nombre_usuario: nombre_usuario,
+                        apellido_usuario: apellido_usuario,
+                        telefono: telefono,
+                        email: email,
+                        dia_hora_booking: dia_hora_booking,
+                        solicitud_especial: solicitud_especial,
+                        number_people: number_people,
+                        restaurante_id: restaurante_id,
+                    })
+                })
+        const data = await json.json()
+    alert('Se ha registrado correctamente con el ID: ' + data.id )
+})
+</script>
+
+
+        <!-- <script>
+            const myForm = document.getElementById('myForm')
+        
+            myForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+        
+                const formData = new FormData(this);
+        
+                fetch('https://apicodeword12.herokuapp.com/booking/' , {
+                    method: 'post',
+                    body: formData
+                }). then (function (response) {
+                    return response.txt();
+                }).then (function (text) {
+                    console.log(text);
+                }).catch(function (error) {
+                    console.error(error);
+                })
+            });
+        </script> -->
+
     </body>
 </html>
