@@ -194,7 +194,7 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Carnival Reservaciones</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Rosmarino Reservaciones</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -206,6 +206,8 @@
                                         <th>Email</th>
                                         <th>Dia u Hora</th>        
                                         <th>Solicitud especial</th>
+                                        <th>Numero de Personas</th>
+                                        <th>ID Restaurante</th>
                                         <th>Acciones</th>
                                     </tr>    
                                     </thead>
@@ -282,6 +284,8 @@
                 <td>${data.results[i].email}</td>
                 <td>${data.results[i].dia_hora_booking}</td>
                 <td>${data.results[i].solicitud_especial}</td>
+                <td>${data.results[i].number_people}</td>
+                <td>${data.results[i].restaurante_id}</td>
                 <td> 
                 <a id="editBtn" href="#"> <i class="fas fa-edit"></i> </a>
                 <a id="deleteBtn" href="#"> <i class="fas fa-user-times"></i> </a>
