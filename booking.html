@@ -176,9 +176,9 @@
         <!-- Main Javascript File -->
         <script src="js/main.js"></script>
 
-        <script>
+        <!--
             /*
-            ---->TRY TO FIX CORS<------
+           ------------- TRY TO FIX CORS<------
             app.use(function (req, res, next) {
             res.header("Access-Control-Allow-Origin", "https://apicodeword12.herokuapp.com/booking/");
             res.header("Acces-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -187,7 +187,7 @@
             */
 
             /*
-            ---->TRY TO FIX CORS<------
+           --------------- TRY TO FIX CORS<------
             router.get('/', function (req,res,next) {
             axios.get(`https://apicodeword12.herokuapp.com/booking/`)
             then(response => {
@@ -210,10 +210,10 @@
                 data.append('number_people', number_people);
                 data.append('restaurante_id', Rselection);
 
-            */
+            */ -->
 
 
-
+            <script>
             $("#submitForm").click(async function(e){
                 e.preventDefault()
                 let nombre_usuario = $('fname').val();
@@ -225,56 +225,25 @@
                 let number_people = $('number_people').val();
                 let restaurante_id = $('Rselection').val();
 
-                const json = await fetch('https://jsonplaceholder.typicode.com/users',{
-        method: 'POST',
-        body: JSON.stringify({
-            nombre_usuario: nombre_usuario,
-            apellido_usuario: apellido_usuario,
-            telefono: telefono,
-            email: email,
-            dia_hora_booking: dia_hora_booking,
-            solicitud_especial: solicitud_especial,
-            number_people: number_people,
-            restaurante_id: restaurante_id,
-        })
-    })
+                const json = await fetch('https://apicodeword12.herokuapp.com/booking/',{
+
+                    method: 'POST',
+                    body: JSON.stringify({
+                        nombre_usuario: nombre_usuario,
+                        apellido_usuario: apellido_usuario,
+                        telefono: telefono,
+                        email: email,
+                        dia_hora_booking: dia_hora_booking,
+                        solicitud_especial: solicitud_especial,
+                        number_people: number_people,
+                        restaurante_id: restaurante_id,
+                    })
+                })
         const data = await json.json()
     alert('Se ha registrado correctamente con el ID: ' + data.id )
 })
 </script>
 
-
-            fetch('https://apicodeword12.herokuapp.com/booking/', {
-                method: 'POST',
-                body: JSON.stringify({data})
-            })
-            .then(function(response) {
-
-                return response.text();
-            })
-                    });
-        </script>
-
-
-<script>
-$("#submitForm").click(async function(e){
-    e.preventDefault()
-    let usuario =  $("#usuario").val()
-    let password =  $("#password").val()
-    const json = await fetch('https://jsonplaceholder.typicode.com/users',{
-        method: 'POST',
-        body: JSON.stringify({
-            name: usuario,
-            username: password,
-        }),
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-        }
-    })
-    const data = await json.json()
-    alert('Se ha registrado correctamente con el ID: ' + data.id )
-})
-</script>
 
         <!-- <script>
             const myForm = document.getElementById('myForm')
