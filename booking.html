@@ -176,27 +176,7 @@
         <!-- Main Javascript File -->
         <script src="js/main.js"></script>
 
-        <!--
-            /*
-           ------------- TRY TO FIX CORS<------
-            app.use(function (req, res, next) {
-            res.header("Access-Control-Allow-Origin", "https://apicodeword12.herokuapp.com/booking/");
-            res.header("Acces-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-            next();
-            });
-            */
-
-            /*
-           --------------- TRY TO FIX CORS<------
-            router.get('/', function (req,res,next) {
-            axios.get(`https://apicodeword12.herokuapp.com/booking/`)
-            then(response => {
-                res.send(response.data.result);
-            }).catch(error => {
-                res.send(error.message);
-            })
-            });
-                        
+        <!--                        
 
             const myForm = document.getElementById('myForm')
             myForm.addEventListener('submit', function (e) {
@@ -211,7 +191,6 @@
                 data.append('restaurante_id', Rselection);
 
             */ -->
-
 
             <script>
             $("#submitForm").click(async function(e){
