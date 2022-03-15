@@ -197,15 +197,6 @@
             })
             });
                         
-
-
-            const myForm = document.getElementById('myForm')
-            myForm.addEventListener('submit', function (e) {
-                e.preventDefault();
-
-            */
-
- 
             $('#bookingButton').click(function(){
                 nombre_usuario=$('fname').val();
                 apellido_usuario=$('lname').val();
@@ -216,8 +207,18 @@
                 number_people=$('number_people').val();
                 restaurante_id=$('Rselection').val();
 
+
+
+            */
+
+ 
+
+            const myForm = document.getElementById('myForm')
+            myForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
             const data = new FormData();
-            
+
                 data.append('nombre_usuario', fname);
                 data.append('apellido_usuario', lname);
                 data.append('telefono', mobile);
@@ -229,7 +230,7 @@
 
             fetch('https://apicodeword12.herokuapp.com/booking/', {
                 method: 'POST',
-                body: data
+                body: JSON.stringify({data})
             })
             .then(function(response) {
 
