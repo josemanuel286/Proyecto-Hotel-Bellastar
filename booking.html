@@ -53,7 +53,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <div class="booking-form">
+                        <div class="booking-form" id="myForm">
                             <div id="success"></div>
                             <form name="sentMessage" id="bookingForm" novalidate="novalidate">
                                 <div class="form-row">
@@ -83,7 +83,7 @@
                                 <div class="form-row">
                                     <div class="control-group col-md-6">
                                         <label>Dia y hora de reservación</label><br>
-                                        <input type="datetime-local">
+                                        <input type="datetime-local" id="datetime">
                                         <p class="help-block text-danger"></p>
                                     </div>
                                     <div>
@@ -152,5 +152,76 @@
   
         <!-- Main Javascript File -->
         <script src="js/main.js"></script>
+
+        <script>
+            /*
+            ---->TRY TO FIX CORS<------
+            app.use(function (req, res, next) {
+            res.header("Access-Control-Allow-Origin", "https://apicodeword12.herokuapp.com/booking/");
+            res.header("Acces-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+            next();
+            });
+            */
+
+            /*
+            ---->TRY TO FIX CORS<------
+            router.get('/', function (req,res,next) {
+            axios.get(`https://apicodeword12.herokuapp.com/booking/`)
+            then(response => {
+                res.send(response.data.result);
+            }).catch(error => {
+                res.send(error.message);
+            })
+            });
+            */
+
+            const myForm = document.getElementById('myForm')
+            myForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+            const data = new FormData();
+                data.append('nombre_usuario', fname);
+                data.append('apellido_usuario', lname);
+                data.append('telefono', mobile);
+                data.append('email', email);
+                data.append('dia_hora_booking', datetime);
+                data.append('solicitud_especial', selection);
+                /*
+                FALTA PONER ESTA OPCION
+                data.append('number_people', number_people);
+                */
+                data.append('restaurante_id', request);
+
+            fetch('https://apicodeword12.herokuapp.com/booking/', {
+                method: 'POST',
+                body: data
+            })
+            .then(function(response) {
+
+                return response.text();
+            })
+                    });
+        </script>
+
+        <!-- <script>
+            const myForm = document.getElementById('myForm')
+        
+            myForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+        
+                const formData = new FormData(this);
+        
+                fetch('https://apicodeword12.herokuapp.com/booking/' , {
+                    method: 'post',
+                    body: formData
+                }). then (function (response) {
+                    return response.txt();
+                }).then (function (text) {
+                    console.log(text);
+                }).catch(function (error) {
+                    console.error(error);
+                })
+            });
+        </script> -->
+
     </body>
 </html>
