@@ -197,29 +197,11 @@
             })
             });
                         
-            $('#bookingButton').click(function(){
-                nombre_usuario=$('fname').val();
-                apellido_usuario=$('lname').val();
-                telefono=$('mobile').val();
-                email=$('email').val();
-                dia_hora_booking=$('datetime').val();
-                solicitud_especial=$('request').val();
-                number_people=$('number_people').val();
-                restaurante_id=$('Rselection').val();
-
-
-
-            */
-
- 
 
             const myForm = document.getElementById('myForm')
             myForm.addEventListener('submit', function (e) {
-                e.preventDefault();
 
-            const data = new FormData();
-
-                data.append('nombre_usuario', fname);
+                                data.append('nombre_usuario', fname);
                 data.append('apellido_usuario', lname);
                 data.append('telefono', mobile);
                 data.append('email', email);
@@ -227,6 +209,40 @@
                 data.append('solicitud_especial', request);
                 data.append('number_people', number_people);
                 data.append('restaurante_id', Rselection);
+
+            */
+
+
+
+            $("#submitForm").click(async function(e){
+                e.preventDefault()
+                let nombre_usuario = $('fname').val();
+                let apellido_usuario = $('lname').val();
+                let telefono = $('mobile').val();
+                let email = $('email').val();
+                let dia_hora_booking = $('datetime').val();
+                let solicitud_especial = $('request').val();
+                let number_people = $('number_people').val();
+                let restaurante_id = $('Rselection').val();
+
+                const json = await fetch('https://jsonplaceholder.typicode.com/users',{
+        method: 'POST',
+        body: JSON.stringify({
+            nombre_usuario: nombre_usuario,
+            apellido_usuario: apellido_usuario,
+            telefono: telefono,
+            email: email,
+            dia_hora_booking: dia_hora_booking,
+            solicitud_especial: solicitud_especial,
+            number_people: number_people,
+            restaurante_id: restaurante_id,
+        })
+    })
+        const data = await json.json()
+    alert('Se ha registrado correctamente con el ID: ' + data.id )
+})
+</script>
+
 
             fetch('https://apicodeword12.herokuapp.com/booking/', {
                 method: 'POST',
@@ -238,6 +254,27 @@
             })
                     });
         </script>
+
+
+<script>
+$("#submitForm").click(async function(e){
+    e.preventDefault()
+    let usuario =  $("#usuario").val()
+    let password =  $("#password").val()
+    const json = await fetch('https://jsonplaceholder.typicode.com/users',{
+        method: 'POST',
+        body: JSON.stringify({
+            name: usuario,
+            username: password,
+        }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        }
+    })
+    const data = await json.json()
+    alert('Se ha registrado correctamente con el ID: ' + data.id )
+})
+</script>
 
         <!-- <script>
             const myForm = document.getElementById('myForm')
