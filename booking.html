@@ -86,13 +86,36 @@
                                         <input type="datetime-local" id="datetime">
                                         <p class="help-block text-danger"></p>
                                     </div>
-                                    <div>
+                                    <div class="control-group col-md-3">
                                         <label>Selecciona tu restaurante</label>
                                         <br>
                                         <select name="restaurante_select" id="selection">
-                                            <option value="c">selecciona</option>
+                                            <option value="0">selecciona</option>
                                             <option value="a">Rosmarin</option>
-                                            <option value="b">frances</option>
+                                            <option value="b">Frances</option>
+                                        </select>
+                                    </div>
+                                    <div class="control-group col-md-3">
+                                        <label>Número de Personas</label>
+                                        <br>
+                                        <select name="restaurante_select" id="number_people">
+                                            <option value="0">selecciona</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
                                         </select>
                                     </div>
                                 </div>
@@ -185,10 +208,7 @@
                 data.append('email', email);
                 data.append('dia_hora_booking', datetime);
                 data.append('solicitud_especial', selection);
-                /*
-                FALTA PONER ESTA OPCION
                 data.append('number_people', number_people);
-                */
                 data.append('restaurante_id', request);
 
             fetch('https://apicodeword12.herokuapp.com/booking/', {
