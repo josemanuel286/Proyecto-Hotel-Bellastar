@@ -89,7 +89,7 @@
                                     <div class="control-group col-md-3">
                                         <label>Selecciona tu restaurante</label>
                                         <br>
-                                        <select name="restaurante_select" id="selection">
+                                        <select name="restaurante_select" id="Rselection">
                                             <option value="0">selecciona</option>
                                             <option value="a">Rosmarin</option>
                                             <option value="b">Frances</option>
@@ -196,7 +196,21 @@
                 res.send(error.message);
             })
             });
+                        
+
+
+                           $('#bookingButton').click(function(){
+                nombre_usuario=$('fname').val();
+                apellido_usuario=$('lname').val();
+                telefono=$('mobile').val();
+                email=$('email').val();
+                dia_hora_booking=$('datetime').val();
+                solicitud_especial=$('request').val();
+                number_people=$('number_people').val();
+                restaurante_id=$('Rselection').val();
             */
+
+ 
 
             const myForm = document.getElementById('myForm')
             myForm.addEventListener('submit', function (e) {
@@ -207,9 +221,9 @@
                 data.append('telefono', mobile);
                 data.append('email', email);
                 data.append('dia_hora_booking', datetime);
-                data.append('solicitud_especial', selection);
+                data.append('solicitud_especial', request);
                 data.append('number_people', number_people);
-                data.append('restaurante_id', request);
+                data.append('restaurante_id', Rselection);
 
             fetch('https://apicodeword12.herokuapp.com/booking/', {
                 method: 'POST',
