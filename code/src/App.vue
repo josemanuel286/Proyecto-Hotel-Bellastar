@@ -1,26 +1,22 @@
 <script setup lang="ts">
+import Login from "./components/login.vue";
 
-
-import NavBar from "./components/NavBar.vue";
 import Headers from "./components/headers.vue";
+import NavBar from "./components/NavBar.vue";
+
 </script>
 
 <template>
   <header>
-    <main>
-      <Headers/>
-    </main>
+    <Headers/>
+    
     <div class="wrapper">
-      <NavBar/>
-
-      <nav>
-        <!--<RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>-->
-      </nav>
+      
+      <Login/>
+      
     </div>
     
   </header>
-
 </template>
 
 <style>

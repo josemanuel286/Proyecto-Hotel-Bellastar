@@ -85,4 +85,4 @@
 </template>
 
 <style>
-@import '@/assets/css/sb-admin-2.min.css';</style>
+@import '@/assets/sb-admin-2.min.css';</style>
