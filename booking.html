@@ -173,8 +173,8 @@
         <script src="js/booking.js"></script>
         <script src="js/jqBootstrapValidation.min.js"></script>
   
-        <!-- Main Javascript File -->
-        <script src="js/main.js"></script>
+        <!-- Main Javascript File 
+        <script src="js/main.js"></script> -->
 
         <!--                        
 
@@ -217,11 +217,11 @@
                         number_people: number_people,
                         restaurante_id: restaurante_id,
                     })
-                })
-        const data = await json.json()
-    alert('Se ha registrado correctamente con el ID: ' + data.id )
-})
-</script>
+                    })
+                    const data = await json.json()
+                alert('Se ha registrado correctamente con el ID: ' + data.id )
+             })
+             </script>
 
 
         <!-- <script>
