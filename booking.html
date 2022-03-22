@@ -157,6 +157,9 @@
 
 
         <!-- FETCH JS-->
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+
         <script>
             $('#submitForm').click(async function(e){
                 e.preventDefault()
@@ -185,11 +188,12 @@
                     })
                     const data = await json.json()
                 alert('Se ha registrado correctamente con el ID: ' + data.id )
-             })
+            })
              </script>
 
 
         <!-- Vendor JavaScript File -->
+        
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/jquery/jquery-migrate.min.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
