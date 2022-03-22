@@ -21,18 +21,22 @@ $(function () {
             $this = $("#bookingButton");
             $this.prop("disabled", true);
             $.ajax({
-                url: "././mail/booking.php",
+                url: "https://apicodeword12.herokuapp.com/booking/",
                 type: "POST",
                 data: {
-                    fname: fname,
-                    lname: lname,
-                    mobile: mobile,
+                    nombre_usuario: fname,
+                    apellido_usuario: lname,
+                    telefono: mobile,
                     email: email,
-                    date_1: date_1,
-                    time_1: time_1,
+                    dia_hora_booking: date_1,
+                    solicitud_especial: request,
+                    number_people: number_people,
+                    restaurante_id: restaurante_id,
+                   /* time_1: time_1,
                     date_2: date_2,
                     time_2: time_2,
-                    request: request
+                    request: request */
+
                 },
                 cache: false,
                 success: function () {
