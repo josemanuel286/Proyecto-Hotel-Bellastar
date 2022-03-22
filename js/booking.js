@@ -1,3 +1,32 @@
+/*$('#submitForm').click(async function(e){
+    e.preventDefault()
+    let nombre_usuario = $('fname').val();
+    let apellido_usuario = $('lname').val();
+    let telefono = $('mobile').val();
+    let email = $('email').val();
+    let dia_hora_booking = $('datetime').val();
+    let solicitud_especial = $('request').val();
+    let number_people = $('number_people').val();
+    let restaurante_id = $('Rselection').val();
+
+    const json = await fetch('https://apicodeword12.herokuapp.com/booking/',{
+
+        method: 'POST',
+        body: JSON.stringify({
+            nombre_usuario: nombre_usuario,
+            apellido_usuario: apellido_usuario,
+            telefono: telefono,
+            email: email,
+            dia_hora_booking: dia_hora_booking,
+            solicitud_especial: solicitud_especial,
+            number_people: number_people,
+            restaurante_id: restaurante_id,
+        })
+        })
+        const data = await json.json()
+    alert('Se ha registrado correctamente con el ID: ' + data.id )
+})*/
+
 $(function () { 
 
     $("#bookingForm input").jqBootstrapValidation({
@@ -6,36 +35,35 @@ $(function () {
         },
         submitSuccess: function ($form, event) {
             event.preventDefault();
-            var fname = $("input#fname").val();
-            var lname = $("input#lname").val();
+            var nombre_usuario = $("input#fname").val();
+            var apellido_usuario = $("input#lname").val();
             var name = fname + ' ' + lname;
-            var mobile = $("input#mobile").val();
+            var telefono = $("input#mobile").val();
             var email = $("input#email").val();
-            var date_1 = $("input#date-1").val();
+            var dia_hora_booking = $("input#date-1").val();
             var date_2 = $("input#date-2").val();
             var time_1 = $("input#time-1").val();
             var time_2 = $("input#time-2").val();
             var request = $("input#request").val();
-            let number_people = $('number_people').val();
-            let restaurante_id = $('Rselection').val();
+            var number_people = $('number_people').val();
+            var Rselection = $('Rselection').val();
             
 
             $this = $("#bookingButton");
             $this.prop("disabled", true);
-
             
-            $.ajax({
+           $.ajax({
                 url: "https://apicodeword12.herokuapp.com/booking/",
                 type: "POST",
                 data: {
-                    nombre_usuario: fname,
-                    apellido_usuario: lname,
-                    telefono: mobile,
+                    nombre_usuario: nombre_usuario,
+                    apellido_usuario: apellido_usuario,
+                    telefono: telefono,
                     email: email,
-                    dia_hora_booking: date_1,
-                    solicitud_especial: request,
+                    dia_hora_booking: dia_hora_booking,
+                    solicitud_especial: solicitud_especial,
                     number_people: number_people,
-                    Rselection: restaurante_id,
+                    Rselection: Rselection,
                     /*time_1: time_1,
                     date_2: date_2,
                     time_2: time_2,*/
