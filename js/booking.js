@@ -45,7 +45,7 @@ $(function () {
             var time_1 = $("input#time-1").val();
             var time_2 = $("input#time-2").val();
             var solicitud_especial = $("input#request").val();
-            var number_people = $('select#number_people').val();
+            var number_people = $("select#number_people").val();
             var restaurante_id = $("select#Rselection").val();
             
 
