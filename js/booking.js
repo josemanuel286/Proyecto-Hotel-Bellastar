@@ -46,7 +46,7 @@ $(function () {
             var time_2 = $("input#time-2").val();
             var solicitud_especial = $("input#request").val();
             var number_people = $('select#number_people').val();
-            var restaurante_id = $("input#Rselection").val();
+            var restaurante_id = $("select#Rselection").val();
             
 
             $this = $("#bookingButton");
