@@ -46,7 +46,7 @@ $(function () {
             var time_2 = $("input#time-2").val();
             var solicitud_especial = $("input#request").val();
             var number_people = $('number_people').val();
-            var Rselection = $('Rselection').val();
+            var restaurante_id = $('Rselection').val();
             
 
             $this = $("#bookingButton");
@@ -60,10 +60,10 @@ $(function () {
                     apellido_usuario: apellido_usuario,
                     telefono: telefono,
                     email: email,
-                    dia_hora_booking: dia_hora_booking,
+                    dia_hora_booking: dia_hora_booking + date_2 + time_1 + time_2,
                     solicitud_especial: solicitud_especial,
                     number_people: number_people,
-                    Rselection: Rselection,
+                    restaurante_id: restaurante_id,
                     /*time_1: time_1,
                     date_2: date_2,
                     time_2: time_2,*/
