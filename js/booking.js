@@ -44,7 +44,7 @@ $(function () {
             var date_2 = $("input#date-2").val();
             var time_1 = $("input#time-1").val();
             var time_2 = $("input#time-2").val();
-            var request = $("input#request").val();
+            var solicitud_especial = $("input#request").val();
             var number_people = $('number_people').val();
             var Rselection = $('Rselection').val();
             
