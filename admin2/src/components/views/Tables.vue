@@ -23,7 +23,7 @@
                                         <th>Acciones</th>
                                         
                                     </thead>
-                                    <tbody id="requisicionesContent">
+                                    <tbody id="data">
                                     </tbody>
                                 </table>
                             </div>
@@ -37,122 +37,33 @@
 
 <script>
 
-        export default {
-        name: 'index'
+      let url = 'https://apicodeword12.herokuapp.com/booking/'
+      fetch(url)
+            .then(response => response.json())
+            .then(data => mostrarData(data))
+            .catch(error => console.log(error))
 
-        , data() {
-            return {
-
-            }
+      const mostrarData = (data) => {
+        console.log(data.results)
+        let body = ''
+        for (let i = 0; i < data.results.length; i++) {
+          body += `
+                <tr><td>${data.results[i].nombre_usuario}</td>
+                <td>${data.results[i].apellido_usuario}</td>
+                <td>${data.results[i].telefono}</td>
+                <td>${data.results[i].email}</td>
+                <td>${data.results[i].dia_hora_booking}</td>
+                <td>${data.results[i].solicitud_especial}</td>
+                <td>${data.results[i].number_people}</td>
+                <td>${data.results[i].restaurante_id}</td>
+                <td> 
+                <a id="editBtn" href="#"> <i class="fas fa-edit"></i> </a>
+                <a id="deleteBtn" href="#"> <i class="fas fa-user-times"></i> </a>
+                <a id="readBtn" href="#"> <i class="fas fa-eye"></i> </a></td> </tr>
+                `
         }
-
-
-        , methods: {
-                async firstDataLoad() {
-                  const response = await requests.get(
-                    'https://apicodeword12.herokuapp.com/booking/'
-                    
-                ) ;
-                    let tbody = document.getElementById("requisicionesContent" ) ;
-                    let items = response.data.data ;
-
-                    for ( let i = 0 ; i <= items.length-1 ; i++ ) {
-
-                        const tr = document.createElement("tr" ) ;
-
-                        for ( let y = 0 ; y <= items[ i ].length-1 ; y++ ) {
-                            const td = document.createElement("td" ) ;
-                            td.innerHTML = items[ i ][ y ] ;
-                            tr.appendChild( td ) ;
-                        }
-
-                        tbody.appendChild( tr ) ;
-                    }
-
-                    // $ ( '#requisicionesList' ).DataTable() ;
-                    let x=1;
-
-                    $ ( '#requisicionesList' ).DataTable( {
-                        "processing": true,
-                        "data": response.data.data
-                        , "columns": [
-                            {
-                                data: 0
-                                , render: function() {
-                                    return x++ ;
-                                }
-                            }
-
-                            , {
-                                data: 1
-                                , render: function( data ) {
-                                    return data ;
-                                }
-                            }
-
-                            , {
-                                data: 2
-                                , render: function( data ) {
-                                    return data;
-                                }
-                            }
-
-                            , {
-                                data : 3
-                                , render: function( data ) {
-                                    return data ;
-                                }
-                            }
-
-                            , {
-                                data : 4
-                                , render: function( data ) {
-                                    return data ;
-                                }
-                            }
-
-                            , {
-                                data : 5
-                                , render: function( data ) {
-                                    return data ;
-                                }
-                            }
-
-                            , {
-                                data : 6
-                                , render: function( data ) {
-                                    return data ;
-                                }
-                            }
-
-                            , {
-                                data : 7
-                                , render: function( data ) {
-                                    return data ;
-                                }
-                            }
-
-                            , {
-                                data : 8
-                                , render: function( data ) {
-                                    return data
-                                }
-                            },
-                            {
-                                data:9
-                                , render: function( data ) {
-                                    return data ;
-                                }
-                            }
-
-                        ]
-                        , 'order': [ [ 0, 'desc' ] ]
-                    }, ) ;
-                }
-                
-        , created() {
-            this.firstDataLoad() ;
-        },}}
+        document.getElementById('data').innerHTML = body
+      }
 </script>
 
 <style>
