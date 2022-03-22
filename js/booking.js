@@ -31,7 +31,7 @@ $(function () {
                     dia_hora_booking: date_1,
                     solicitud_especial: request,
                     number_people: number_people,
-                    restaurante_id: restaurante_id,
+                    Rselection: restaurante_id,
                    /* time_1: time_1,
                     date_2: date_2,
                     time_2: time_2,
