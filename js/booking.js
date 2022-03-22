@@ -40,7 +40,7 @@ $(function () {
             var name = fname + ' ' + lname;
             var telefono = $("input#mobile").val();
             var email = $("input#email").val();
-            var dia_hora_booking = $("input#date-1").val();
+            var dia_hora_booking = $("input#datetime").val();
             var date_2 = $("input#date-2").val();
             var time_1 = $("input#time-1").val();
             var time_2 = $("input#time-2").val();
@@ -60,7 +60,7 @@ $(function () {
                     apellido_usuario: apellido_usuario,
                     telefono: telefono,
                     email: email,
-                    dia_hora_booking: dia_hora_booking + date_2 + time_1 + time_2,
+                    dia_hora_booking: dia_hora_booking, 
                     solicitud_especial: solicitud_especial,
                     number_people: number_people,
                     restaurante_id: restaurante_id,
