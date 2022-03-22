@@ -36,11 +36,10 @@ $(function () {
                     solicitud_especial: request,
                     number_people: number_people,
                     Rselection: restaurante_id,
-                    time_1: time_1,
+                    /*time_1: time_1,
                     date_2: date_2,
-                    time_2: time_2,
-                    request: request 
-
+                    time_2: time_2,*/
+                    
                 }, 
 
 
