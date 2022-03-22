@@ -37,14 +37,5 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
 
-export default {
-  name: 'TasksMenu',
-  computed: {
-    ...mapState([
-      'userInfo'
-    ])
-  }
-}
 </script>

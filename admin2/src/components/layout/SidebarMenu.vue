@@ -7,6 +7,7 @@
         <span class="page">Dashboard</span>
       </a>
     </router-link>
+
     <router-link tag="li" class="pageLink" to="/tables">
       <a>
         <i class="fa fa-table"></i>
@@ -18,7 +19,7 @@
     <router-link tag="li" class="pageLink" to="/tasks">
       <a>
         <i class="fa fa-tasks"></i>
-        <span class="page">Tasks</span>
+        <span class="page">Usuarios</span>
       </a>
     </router-link>
     <router-link tag="li" class="pageLink" to="/setting">

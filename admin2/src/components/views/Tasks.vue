@@ -1,50 +1,61 @@
 <template>
   <section class="content">
-    <div class="row center-block">
-      <h1 class="text-center">Tasks</h1>
-      <ul class="timeline">
-        <!-- timeline time label -->
-        <li class="time-label">
-          <span class="bg-green">{{today}}</span>
-        </li>
-        <!-- timeline item -->
-        <li v-for="line in timeline">
-          <!-- timeline icon -->
-          <i v-bind:class="'fa ' + line.icon + ' bg-' + line.color"></i>
-          <div class="timeline-item">
-            <span class="time"><i class="fa fa-clock-o"></i>&nbsp;{{line.time}}</span>
-            <h3 class="timeline-header">{{line.title}}</h3>
-            <div class="timeline-body" v-if="line.body" v-html="line.body">
-            </div>
-            <div class="timeline-footer" v-if="line.buttons">
-              <a v-for="btn in line.buttons" v-bind:class="'btn btn-' + btn.type + ' btn-xs'" v-bind:href="btn.href" v-bind:target="btn.target">{{btn.message}}</a>
-            </div>
-          </div>
-        </li>
-      <!-- END timeline item -->
-      </ul>
-    </div>
+    
+<div class="container-fluid">
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Usuarios</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                            <th>Nombre</th>
+                                            <th>Apellido</th>
+                                            <th>Correo</th>
+                                            <th>Contacto</th>
+                                            <th>Acciones</th>
+                                        
+                                    </thead>
+                                    <tbody id="data">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
   </section>
 </template>
 <script>
-  import moment from 'moment'
-  import {timeline} from '../../demo'
+      let url = 'https://apicodeword12.herokuapp.com/usuarios/'
+      fetch(url)
+            .then(response => response.json())
+            .then(data => mostrarData(data))
+            .catch(error => console.log(error))
 
-  export default {
-    name: 'Tasks',
-    computed: {
-      today () {
-        return moment().format('MMM Do YY')
-      },
-      timeline () {
-        return timeline
+      const mostrarData = (data) => {
+        console.log(data.results)
+        let body = ''
+        for (let i = 0; i < data.results.length; i++) {
+          body += `
+                <tr><td>${data.results[i].name}</td>
+                <td>${data.results[i].last_name}</td>
+                <td>${data.results[i].contactmail}</td>
+                <td>${data.results[i].cellphone}</td>
+                <td> 
+                <a id="editBtn" href="#"> <i class="fas fa-edit"></i> </a>
+                <a id="deleteBtn" href="#"> <i class="fas fa-user-times"></i> </a>
+                <a id="readBtn" href="#"> <i class="fas fa-eye"></i> </a></td> </tr>
+                `
+        }
+        document.getElementById('data').innerHTML = body
       }
-    }
-  }
 </script>
 
 <style>
-  .timeline-footer a.btn {
-    margin-right: 10px;
-  }
+
 </style>
