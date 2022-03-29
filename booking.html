@@ -87,18 +87,16 @@
                                         <p class="help-block text-danger"></p>
                                     </div>
                                     <div class="control-group col-md-3">
-                                        <label>Selecciona tu restaurante</label>
-                                        <br>
-                                        <select name="restaurante_select" id="Rselection">
+                                        <label>Selecciona tu restaurante</label><br>
+                                        <select id="Rselection">
                                             <option value="0">selecciona</option>
-                                            <option value="a">Rosmarin</option>
-                                            <option value="b">Frances</option>
+                                            <option value="https://apicodeword12.herokuapp.com/restaurantes/1/">Rosmarin</option>
+                                            <option value="https://apicodeword12.herokuapp.com/restaurantes/2/">Frances</option>
                                         </select>
                                     </div>
                                     <div class="control-group col-md-3">
-                                        <label>Número de Personas</label>
-                                        <br>
-                                        <select name="restaurante_select" id="number_people">
+                                        <label>Número de Personas</label><br>
+                                        <select id="number_people">
                                             <option value="0">selecciona</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
@@ -155,45 +153,13 @@
         
         <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
-        <!-- Vendor JavaScript File -->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/jquery/jquery-migrate.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="vendor/easing/easing.min.js"></script>
-        <script src="vendor/stickyjs/sticky.js"></script>
-        <script src="vendor/superfish/hoverIntent.js"></script>
-        <script src="vendor/superfish/superfish.min.js"></script>
-        <script src="vendor/wow/wow.min.js"></script>
-        <script src="vendor/slick/slick.min.js"></script>
-        <script src="vendor/tempusdominus/js/moment.min.js"></script>
-        <script src="vendor/tempusdominus/js/moment-timezone.min.js"></script>
-        <script src="vendor/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-        
-        <!-- Booking Javascript File -->
-        <script src="js/booking.js"></script>
-        <script src="js/jqBootstrapValidation.min.js"></script>
-  
-        <!-- Main Javascript File -->
-        <script src="js/main.js"></script>
 
-        <!--                        
+        <!-- FETCH JS 
 
-            const myForm = document.getElementById('myForm')
-            myForm.addEventListener('submit', function (e) {
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
 
-                                data.append('nombre_usuario', fname);
-                data.append('apellido_usuario', lname);
-                data.append('telefono', mobile);
-                data.append('email', email);
-                data.append('dia_hora_booking', datetime);
-                data.append('solicitud_especial', request);
-                data.append('number_people', number_people);
-                data.append('restaurante_id', Rselection);
-
-            */ -->
-
-            <script>
-            $("#submitForm").click(async function(e){
+        <script>
+            $('#submitForm').click(async function(e){
                 e.preventDefault()
                 let nombre_usuario = $('fname').val();
                 let apellido_usuario = $('lname').val();
@@ -217,33 +183,53 @@
                         number_people: number_people,
                         restaurante_id: restaurante_id,
                     })
-                })
-        const data = await json.json()
-    alert('Se ha registrado correctamente con el ID: ' + data.id )
-})
-</script>
+                    })
+                    const data = await json.json()
+                alert('Se ha registrado correctamente con el ID: ' + data.id )
+            })
+             </script> -->
 
 
-        <!-- <script>
+        <!-- Vendor JavaScript File -->
+        
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/jquery/jquery-migrate.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="vendor/easing/easing.min.js"></script>
+        <script src="vendor/stickyjs/sticky.js"></script>
+        <script src="vendor/superfish/hoverIntent.js"></script>
+        <script src="vendor/superfish/superfish.min.js"></script>
+        <script src="vendor/wow/wow.min.js"></script>
+        <script src="vendor/slick/slick.min.js"></script>
+        <script src="vendor/tempusdominus/js/moment.min.js"></script>
+        <script src="vendor/tempusdominus/js/moment-timezone.min.js"></script>
+        <script src="vendor/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+        
+        <!-- Booking Javascript File -->
+        <script src="js/booking.js"></script> 
+        <script src="js/jqBootstrapValidation.min.js"></script> 
+  
+        <!-- Main Javascript File -->
+        <script src="js/main.js"></script>
+
+        <!--                        
+
             const myForm = document.getElementById('myForm')
-        
             myForm.addEventListener('submit', function (e) {
-                e.preventDefault();
-        
-                const formData = new FormData(this);
-        
-                fetch('https://apicodeword12.herokuapp.com/booking/' , {
-                    method: 'post',
-                    body: formData
-                }). then (function (response) {
-                    return response.txt();
-                }).then (function (text) {
-                    console.log(text);
-                }).catch(function (error) {
-                    console.error(error);
-                })
-            });
-        </script> -->
+
+                                data.append('nombre_usuario', fname);
+                data.append('apellido_usuario', lname);
+                data.append('telefono', mobile);
+                data.append('email', email);
+                data.append('dia_hora_booking', datetime);
+                data.append('solicitud_especial', request);
+                data.append('number_people', number_people);
+                data.append('restaurante_id', Rselection);
+
+            */ -->
+
+
+
 
     </body>
 </html>
