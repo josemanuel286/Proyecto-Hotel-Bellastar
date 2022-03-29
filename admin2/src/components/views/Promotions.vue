@@ -21,20 +21,18 @@
                 <th>Apellido</th>
                 <th>Telefono</th>
                 <th>Email</th>
-                <th>Dia u Hora</th>
-                <th>Solicitud especial</th>
-                <th>Numero de Personas</th>
-                <th>ID Restaurante</th>
                 <th>Acciones</th>
               </thead>
-              <tbody id="data">
                 <tr v-for="record in records" :key="record.id">
+                    <td>{{record.nombre_promocion}}</td>
+                    <td>{{record.descripcion}}</td>
+                    <td>{{record.promocion_image}}</td>
+                    <td>{{record.restaurante_id}}</td>
                     <td> 
                     <a id="editBtn" href="#"> <i class="fas fa-edit"></i> </a>
                     <a id="deleteBtn" href="#"> <i class="fas fa-user-times"></i> </a>
                     <a id="readBtn" href="#"> <i class="fas fa-eye"></i> </a></td>
                 </tr>
-              </tbody>
             </table>
           </div>
         </div>
@@ -51,7 +49,7 @@ export default {
     }
   },
   mounted() {
-    let url = 'https://apicodeword12.herokuapp.com/booking/'
+    let url = 'https://apicodeword12.herokuapp.com/promociones/'
     fetch(url)
       .then((response) => response.json())
       .then((data) => {

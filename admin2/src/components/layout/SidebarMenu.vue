@@ -14,6 +14,12 @@
         <span class="page">Restaurantes</span>
       </a>
     </router-link>
+        <router-link tag="li" class="pageLink" to="/promotions">
+      <a>
+        <i class="fa fa-table"></i>
+        <span class="page">Promociones</span>
+      </a>
+    </router-link>
 
     <li class="header">ME</li>
     <router-link tag="li" class="pageLink" to="/users">
