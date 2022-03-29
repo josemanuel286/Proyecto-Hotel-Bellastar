@@ -5,6 +5,8 @@ import NotFoundView from './components/404.vue'
 // Import Views - Dash
 import DashboardView from './components/views/Dashboard.vue'
 import TablesView from './components/views/Tables.vue'
+import UsersView from './components/views/Users.vue'
+import PromotionsView from './components/views/Promotions.vue'
 
 // Routes
 const routes = [
@@ -27,6 +29,16 @@ const routes = [
         component: TablesView,
         name: 'Tables',
         meta: {description: 'Simple and advance table in CoPilot'}
+      }, {
+        path: 'users',
+        component: UsersView,
+        name: 'Users',
+        meta: {description: 'tablas de usuarios'}
+      }, {
+        path: 'promotions',
+        component: PromotionsView,
+        name: 'Promotions',
+        meta: {description: 'tablas de promociones'}
       }
     ]
   }, {

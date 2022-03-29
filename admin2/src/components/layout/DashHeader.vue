@@ -13,9 +13,6 @@
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          <messages-menu></messages-menu>
-          <notifications-menu></notifications-menu>
-          <tasks-menu></tasks-menu>
           <user-menu :user="user"></user-menu>
         </ul>
       </div>
@@ -25,17 +22,11 @@
 
 <script>
 import { mapState } from 'vuex'
-import MessagesMenu from './MessagesMenu'
-import NotificationsMenu from './NotificationsMenu'
-import TasksMenu from './TasksMenu'
 import UserMenu from './UserMenu'
 
 export default {
   name: 'DashHeader',
   components: {
-    MessagesMenu,
-    NotificationsMenu,
-    TasksMenu,
     UserMenu
   },
   props: ['user'],

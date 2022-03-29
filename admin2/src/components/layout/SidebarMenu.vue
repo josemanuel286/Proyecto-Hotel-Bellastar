@@ -4,28 +4,22 @@
     <router-link tag="li" class="pageLink" to="/">
       <a>
         <i class="fa fa-desktop"></i>
-        <span class="page">Dashboard</span>
+        <span class="page">Inicio</span>
       </a>
     </router-link>
 
     <router-link tag="li" class="pageLink" to="/tables">
       <a>
         <i class="fa fa-table"></i>
-        <span class="page">Tables</span>
+        <span class="page">Restaurantes</span>
       </a>
     </router-link>
 
     <li class="header">ME</li>
-    <router-link tag="li" class="pageLink" to="/tasks">
+    <router-link tag="li" class="pageLink" to="/users">
       <a>
         <i class="fa fa-tasks"></i>
         <span class="page">Usuarios</span>
-      </a>
-    </router-link>
-    <router-link tag="li" class="pageLink" to="/setting">
-      <a>
-        <i class="fa fa-cog"></i>
-        <span class="page">Settings</span>
       </a>
     </router-link>
     <li class="treeview">
@@ -62,19 +56,7 @@
         <span class="page">Access</span>
       </a>
     </router-link>
-    <router-link tag="li" class="pageLink" to="/server">
-      <a>
-        <i class="fa fa-hdd-o"></i>
-        <span class="page">Server</span>
-      </a>
-    </router-link>
-    <router-link tag="li" class="pageLink" to="/repos">
-      <a>
-        <i class="fa fa-heart"></i>
-        <span class="page">Repos</span>
-        <small class="label pull-right bg-green">AJAX</small>
-      </a>
-    </router-link>
+
 
     <li class="header">PAGES</li>
     <router-link tag="li" class="pageLink" to="/login">

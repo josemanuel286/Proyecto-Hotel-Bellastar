@@ -31,7 +31,21 @@
   </section>
 </template>
 
-
-<style>
-
-</style>
+<script>
+export default {
+  data() {
+    return {
+      records: []
+    }
+  },
+  mounted() {
+    let url = 'https://apicodeword12.herokuapp.com/usuarios/'
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        this.records = data.results
+      })
+      .catch((error) => console.log(error))
+  }
+}
+</script>
