@@ -267,6 +267,17 @@
 
     <!--Tabla Datos-->
     <script>
+
+        var fila = document.getElementsByTagName("tr") ;
+         for (var j = 0 ; j < fila.length ; j++){
+             fila[j].firstElementChild.id = j ;
+                 
+             console.log ()
+         }
+
+         
+        
+
         let url = "https://apicodeword12.herokuapp.com/booking/"
         fetch (url)
             .then(response => response.json())
@@ -278,7 +289,8 @@
             let body = ''
             for (let i = 0; i<data.results.length; i++){
             body+=`
-                <tr><td>${data.results[i].nombre_usuario}</td>
+                <tr>
+                <td>${data.results[i].nombre_usuario}</td>
                 <td>${data.results[i].apellido_usuario}</td>
                 <td>${data.results[i].telefono}</td>
                 <td>${data.results[i].email}</td>
@@ -286,13 +298,32 @@
                 <td>${data.results[i].solicitud_especial}</td>
                 <td>${data.results[i].number_people}</td>
                 <td>${data.results[i].restaurante_id}</td>
-                <td> 
+                <td>
                 <a id="editBtn" href="#"> <i class="fas fa-edit"></i> </a>
+                <a id="deleteBtn" href="#" > <i class="fa fa-trash"></i> </a>
                 <a id="deleteBtn" href="#"> <i class="fas fa-user-times"></i> </a>
                 <a id="readBtn" href="#"> <i class="fas fa-eye"></i> </a></td> </tr>
                 `
+            
+                
             }
             document.getElementById('data').innerHTML = body
+            document.getElementById("deleteBtn").addEventListener("click", deletePost)
+
+            function deletePost(){
+                for (let i = 0; i<data.results.length; i++)
+                        
+            fetch (`https://apicodeword12.herokuapp.com/booking/${i}`,{
+                method: "DELETE",
+                body: null,
+                headers: {
+                    "Content-type": "aplication/json; charset=UFT-8",
+                }
+            })
+            .then((response)=>response.json())
+            .then((json) => console.log(json));
+
+        }
         }
     </script>
     
@@ -313,6 +344,10 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
 
+    <script>
+        
+
+    </script>
 </body>
 
 </html>
