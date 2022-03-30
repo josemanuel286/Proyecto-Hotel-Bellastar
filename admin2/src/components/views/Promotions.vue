@@ -5,7 +5,7 @@
       <div class="card shadow mb-4">
         <div class="card-header py-3">
           <h6 class="m-0 font-weight-bold text-primary">
-            Rosmarino Reservaciones
+            Promociones habilitadas
           </h6>
         </div>
         <div class="card-body">
@@ -18,9 +18,9 @@
             >
               <thead>
                 <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Telefono</th>
-                <th>Email</th>
+                <th>Descripción</th>
+                <th>Imagen</th>
+                <th>Enlace</th>
                 <th>Acciones</th>
               </thead>
                 <tr v-for="record in records" :key="record.id">
