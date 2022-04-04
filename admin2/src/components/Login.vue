@@ -30,11 +30,11 @@ export default {
   name: 'Login',
   data(router) {
     return {
-     /* section: 'Login',
-      loading: '', */
+      section: 'Login',
+      loading: '',
       username: '',
-      password: ''
-      // response: ''
+      password: '',
+      response: ''
     }
   },
   methods: {
@@ -70,6 +70,7 @@ export default {
           /* Setting user in the state and caching record to the localStorage */
           if (data.user) {
             var token = 'Bearer ' + data.token
+
             this.$store.commit('SET_USER', data.user)
             this.$store.commit('SET_TOKEN', token)
 
