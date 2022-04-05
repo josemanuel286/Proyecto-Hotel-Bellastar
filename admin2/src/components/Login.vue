@@ -23,45 +23,6 @@
   </div>
 </template>
 
-
-<!--
-<script> 
-export default {
-  name: 'Login',
-  data() {
-    return {
-       section: 'Login',
-      loading: '',
-      username: '',
-      password: '',
-      response: ''
-    }
-  },
-  methods: {
-    async checkCreds() {
-      var payload = {
-        username: this.username,
-        password: this.password
-      }
-      this.loading = true
-      await this.axios.post('https://apicodeword12.herokuapp.com/login/', payload)
-      .then(response => {
-        this.axios.defaults.headers.comon['Authorization'] = 'Bearer' + response.data
-        this.$router.push('/Dash')
-        console.log(response)
-      })
-      .catch(error => {
-        var data = error.response.data
-        M.toast({html: data.message})
-      });
-      this.loading = false
-    }
-  }
-}
-</script>
--->
-
-<!-- DEFAULT SCRIPT -->
 <script>
 import api from '../api'
 
