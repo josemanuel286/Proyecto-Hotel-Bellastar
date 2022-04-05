@@ -59,13 +59,16 @@ export default {
     }
   },
   mounted() {
-    const headers = {
-      headers: {
-        'Authorization': `Bearer ${localStorage.getItem('token')}`
-      }
-    }
     let url = 'https://apicodeword12.herokuapp.com/booking/'
-    fetch(url, {method: 'Get', headers})
+    fetch(url, {
+      method: 'Get',
+      headers: {
+        'Authorization': `${localStorage.getItem('token')}`,
+        'Content-type': 'application/json',
+        'Accept': 'application/json',
+        'Access-Control-Request-Headers': 'text/plain'
+      }})
+    console.log(`${localStorage.getItem('token')}`)
       .then((response) => response.json())
       .then((data) => {
         this.records = data.results
