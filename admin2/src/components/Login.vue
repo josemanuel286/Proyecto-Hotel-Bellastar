@@ -86,11 +86,9 @@ export default {
 
       /* Making API call to authenticate a user */
       api
-        .request('post', '/login', { username, password })
+        .request('post', '/login/', { username, password })
         .then(response => {
           this.toggleLoading()
-          console.log(data)
-
           var data = response.data
           /* Checking if error object was returned from the server */
           if (data.error) {
@@ -103,14 +101,12 @@ export default {
             } else {
               this.response = data.error
             }
-
             return
           }
-
+          console.log(data)
           /* Setting user in the state and caching record to the localStorage */
           if (data.user) {
-            var token = 'Bearer ' + data.token
-
+            var token = 'Authorization: Bearer ' + data.token
             this.$store.commit('SET_USER', data.user)
             this.$store.commit('SET_TOKEN', token)
 
@@ -119,13 +115,12 @@ export default {
               window.localStorage.setItem('token', token)
             }
 
-            this.$router.push(data.redirect ? data.redirect : '/Dash')
+            this.$router.push(data.redirect ? data.redirect : '/')
           }
         })
         .catch(error => {
           this.$store.commit('TOGGLE_LOADING')
           console.log(error)
-
           this.response = 'Server appears to be offline'
           this.toggleLoading()
         })
