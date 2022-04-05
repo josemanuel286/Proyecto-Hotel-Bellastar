@@ -68,10 +68,9 @@ export default {
         'Accept': 'application/json',
         'Access-Control-Request-Headers': 'text/plain'
       }})
-    console.log(`${localStorage.getItem('token')}`)
       .then((response) => response.json())
       .then((data) => {
-        this.records = data.results
+        this.records = data
         console.log(this.records)
       })
       .catch((error) => console.log(error))
