@@ -1,3 +1,11 @@
+/* import { createApp } from 'vue'
+import App from './components/App'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+import router from './router'
+createApp(App).use(router).use(VueAxios, axios).mout('#app')
+*/
+
 // Import ES6 Promise
 import 'es6-promise/auto'
 
