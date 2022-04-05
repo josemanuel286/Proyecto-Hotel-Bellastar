@@ -36,7 +36,12 @@
                     <td>{{record.dia_hora_booking}}</td>
                     <td>{{record.solicitud_especial}}</td>
                     <td>{{record.number_people}}</td>
-                    <td>{{record.restaurante_id}}</td>
+                    <div v-if="record.restaurante_id=== 'https://apicodeword12.herokuapp.com/restaurantes/2/'">
+                      <td>Frances</td>
+                    </div>
+                    <div v-else-if="record.restaurante_id=== 'https://apicodeword12.herokuapp.com/restaurantes/1/'">
+                      <td>Carnival</td>
+                    </div>
                     <td> 
                     <a id="editBtn" href="#"> <i class="fas fa-edit"></i> </a>
                     <a id="deleteBtn" href="#"> <i class="fas fa-user-times"></i> </a>
@@ -68,11 +73,10 @@ export default {
         'Accept': 'application/json',
         'Access-Control-Request-Headers': 'text/plain'
       }})
-    console.log(`${localStorage.getItem('token')}`)
       .then((response) => response.json())
       .then((data) => {
-        this.records = data.results
-        console.log(this.records)
+        this.records = data
+        console.log(data)
       })
       .catch((error) => console.log(error))
   }
