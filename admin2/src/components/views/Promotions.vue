@@ -50,15 +50,22 @@ export default {
   },
   mounted() {
     let url = 'https://apicodeword12.herokuapp.com/promociones/'
-    fetch(url)
+    fetch(url, {
+      method: 'Get',
+      headers: {
+        'Authorization': `${localStorage.getItem('token')}`,
+        'Content-type': 'application/json',
+        'Accept': 'application/json',
+        'Access-Control-Request-Headers': 'text/plain'
+      }})
       .then((response) => response.json())
       .then((data) => {
-        this.records = data.results
+        this.records = data
+        console.log(data)
       })
       .catch((error) => console.log(error))
   }
 }
-
 </script>
 
 <style>
