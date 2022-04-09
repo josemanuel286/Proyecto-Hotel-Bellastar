@@ -20,6 +20,16 @@
                                         
                                     </thead>
                                     <tbody id="data">
+                                      <tr v-for="record in records" :key="record.id">
+                                          <td>{{record.name}}</td>
+                                          <td>{{record.last_name}}</td>
+                                          <td>{{record.email}}</td>
+                                          <td>{{record.cellphone}}</td>
+                                          <td> 
+                                          <a id="editBtn" href="#"> <i class="fas fa-edit"></i> </a>
+                                          <a id="deleteBtn" href="#"> <i class="fas fa-user-times"></i> </a>
+                                          </td>
+                                      </tr>
                                     </tbody>
                                 </table>
                             </div>
