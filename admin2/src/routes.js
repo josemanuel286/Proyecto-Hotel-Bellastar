@@ -7,6 +7,7 @@ import DashboardView from './components/views/Dashboard.vue'
 import TablesView from './components/views/Tables.vue'
 import UsersView from './components/views/Users.vue'
 import PromotionsView from './components/views/Promotions.vue'
+import EditarUsersView from './components/views/editarUsers.vue'
 
 // Routes
 const routes = [
@@ -39,6 +40,11 @@ const routes = [
         component: PromotionsView,
         name: 'Promotions',
         meta: {description: 'tablas de promociones'}
+      }, {
+        path: 'EditatUsers',
+        component: EditarUsersView,
+        name: 'editarusers',
+        meta: {description: 'tablas de usuario'}
       }
     ]
   }, {

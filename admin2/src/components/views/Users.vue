@@ -26,8 +26,17 @@
                                           <td>{{record.email}}</td>
                                           <td>{{record.cellphone}}</td>
                                           <td> 
-                                          <a id="editBtn" href="#"> <i class="fas fa-edit"></i> </a>
-                                          <a id="deleteBtn" href="#"> <i class="fas fa-user-times"></i> </a>
+                                          <div v-if="record.status=== 1">
+                                            <a id="status" style="color:green">Activo</a>
+                                          </div>
+                                          <div v-else-if="record.status=== 2">
+                                            <a id="status" style="color:red">inactivo</a>
+                                          </div>
+                                          <router-link  to="./editarUsers.vue">
+                                            <a>
+                                              <span class="page">Editar</span>
+                                            </a>
+                                          </router-link>
                                           </td>
                                       </tr>
                                     </tbody>
@@ -35,13 +44,14 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
 
   </section>
+  
 </template>
 
 <script>
+
 export default {
   data() {
     return {
