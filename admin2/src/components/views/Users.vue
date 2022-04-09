@@ -32,7 +32,7 @@
                                           <div v-else-if="record.status=== 2">
                                             <a id="status" style="color:red">inactivo</a>
                                           </div>
-                                          <router-link  to="./editarUsers.vue">
+                                          <router-link  to="./editarUsers">
                                             <a>
                                               <span class="page">Editar</span>
                                             </a>

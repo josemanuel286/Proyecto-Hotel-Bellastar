@@ -1,19 +1,21 @@
 import DashView from './components/Dash.vue'
 import LoginView from './components/Login.vue'
 import NotFoundView from './components/404.vue'
-
+import EditarUsersView from './components/views/editarUsers.vue'
 // Import Views - Dash
 import DashboardView from './components/views/Dashboard.vue'
 import TablesView from './components/views/Tables.vue'
 import UsersView from './components/views/Users.vue'
 import PromotionsView from './components/views/Promotions.vue'
-import EditarUsersView from './components/views/editarUsers.vue'
-
 // Routes
 const routes = [
   {
     path: '/login',
     component: LoginView
+  },
+  {
+    path: '/editarUsers',
+    component: EditarUsersView
   },
   {
     path: '/',
@@ -40,11 +42,6 @@ const routes = [
         component: PromotionsView,
         name: 'Promotions',
         meta: {description: 'tablas de promociones'}
-      }, {
-        path: 'EditatUsers',
-        component: EditarUsersView,
-        name: 'editarusers',
-        meta: {description: 'tablas de usuario'}
       }
     ]
   }, {

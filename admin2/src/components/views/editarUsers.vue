@@ -1,5 +1,5 @@
 <template>
-  <div class="contact">
+  <section class="contact">
     <h1 class="title">Contacto</h1>
     <form action class="form" @submit.prevent="contact">
       <label class="form-label" for="#name">Nombre</label>
@@ -48,7 +48,7 @@
       />
       <input class="form-submit" type="submit" value="Contactar" />
     </form>
-  </div>
+  </section>
 </template>
 
 <script>
