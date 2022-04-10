@@ -14,10 +14,6 @@ const routes = [
     component: LoginView
   },
   {
-    path: '/editarUsers',
-    component: EditarUsersView
-  },
-  {
     path: '/',
     component: DashView,
     children: [
@@ -42,6 +38,11 @@ const routes = [
         component: PromotionsView,
         name: 'Promotions',
         meta: {description: 'tablas de promociones'}
+      }, {
+        path: 'editarUsers/:idUser',
+        component: EditarUsersView,
+        name: 'editarUsers',
+        meta: {description: 'tablas de editarUsers'}
       }
     ]
   }, {

@@ -32,11 +32,9 @@
                                           <div v-else-if="record.status=== 2">
                                             <a id="status" style="color:red">inactivo</a>
                                           </div>
-                                          <router-link  to="./editarUsers">
-                                            <a>
-                                              <span class="page">Editar</span>
-                                            </a>
-                                          </router-link>
+                                          <button  @click="editarUser(record.id)">
+                                            Editar
+                                          </button>
                                           </td>
                                       </tr>
                                     </tbody>
@@ -74,6 +72,11 @@ export default {
         console.log(data)
       })
       .catch((error) => console.log(error))
+  },
+  methods: {
+    editarUser(id) {
+      this.$router.push('./editarUsers/' + id)
+    }
   }
 }
 </script>
