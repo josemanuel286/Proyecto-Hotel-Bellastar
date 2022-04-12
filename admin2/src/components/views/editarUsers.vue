@@ -46,6 +46,13 @@
         id="email"
         placeholder="Email"
       />
+      <input
+        id="st"
+        type="checkbox"
+        class=""
+        :checked="chStatus"
+        @click="changeStatus()"
+      >
       <button @click="guardar()" value="Guardar" />
       <button @click="cancelar()" value="Cancelar" />
     </form>
@@ -55,6 +62,7 @@
 <script>
 export default {
   data: () => ({
+    chStatus: false,
     records: []
   }),
   mounted() {
@@ -74,18 +82,26 @@ export default {
         this.records = data
       })
       .catch((error) => console.log(error))
+
+    if (this.records.status === 1) {
+      this.chStatus = true
+    } else {
+      this.chStatus = false
+    }
   },
   methods: {
     guardar() {
+      let st = this.chStatus === true ? 1 : 2
       let id = this.$route.params.idUser
-      let url = 'https://apicodeword12.herokuapp.com/users/' + id
+      let url = 'https://apicodeword12.herokuapp.com/users/' + id + '/'
       const dataUser = {
         id: parseInt(id),
         name: this.records.name,
         last_name: this.records.last_name,
-        cellphone: this.records.cellphone,
+        cellphone: parseInt(this.records.cellphone),
         username: this.records.username,
-        email: this.records.email
+        email: this.records.email,
+        status: st
       }
       fetch(url, {
         method: 'PUT',
@@ -98,9 +114,9 @@ export default {
         }
       })
         .then((res) => res.json())
-        .catch((error) => console.error('Error:', error))
-        .then((response) => console.log('Success:', response))
-      console.log(JSON.stringify(dataUser))
+    },
+    cancelar() {
+      this.$router.push('../Users')
     }
   }
 }
