@@ -11,32 +11,32 @@
         required
         placeholder="Nombre"
       />
-      <label class="form-label" for="#name">Apellido</label>
+      <label class="form-label" for="#last_name">Apellido</label>
       <input
         v-model="records.last_name"
         class="form-input"
         type="text"
-        id="name"
+        id="last_name"
         required
-        placeholder="Nombre"
+        placeholder="last_name"
       />
-      <label class="form-label" for="#name">Telefono</label>
+      <label class="form-label" for="#cellphone">Telefono</label>
       <input
         v-model="records.cellphone"
         class="form-input"
         type="text"
-        id="name"
+        id="cellphone"
         required
-        placeholder="Nombre"
+        placeholder="cellphone"
       />
-      <label class="form-label" for="#name">Usuario</label>
+      <label class="form-label" for="#username">Usuario</label>
       <input
         v-model="records.username"
         class="form-input"
         type="text"
-        id="name"
+        id="username"
         required
-        placeholder="Nombre"
+        placeholder="username"
       />
       <label class="form-label" for="#email">Email</label>
       <input
@@ -55,8 +55,7 @@
 <script>
 export default {
   data: () => ({
-    name: '',
-    email: ''
+    records: []
   }),
   mounted() {
     let id = this.$route.params.idUser
@@ -81,14 +80,15 @@ export default {
       let id = this.$route.params.idUser
       let url = 'https://apicodeword12.herokuapp.com/users/' + id
       const dataUser = {
-        id: this.$route.params.idUser,
+        id: parseInt(id),
         name: this.records.name,
         last_name: this.records.last_name,
         cellphone: this.records.cellphone,
+        username: this.records.username,
         email: this.records.email
       }
       fetch(url, {
-        method: 'Put',
+        method: 'PUT',
         body: JSON.stringify(dataUser),
         headers: {
           Authorization: `${localStorage.getItem('token')}`,
@@ -100,6 +100,7 @@ export default {
         .then((res) => res.json())
         .catch((error) => console.error('Error:', error))
         .then((response) => console.log('Success:', response))
+      console.log(JSON.stringify(dataUser))
     }
   }
 }
