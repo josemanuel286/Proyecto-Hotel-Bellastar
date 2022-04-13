@@ -29,9 +29,10 @@
                     <td>{{record.promocion_image}}</td>
                     <td>{{record.restaurante_id}}</td>
                     <td> 
-                    <a id="editBtn" href="#"> <i class="fas fa-edit"></i> </a>
-                    <a id="deleteBtn" href="#"> <i class="fas fa-user-times"></i> </a>
-                    <a id="readBtn" href="#"> <i class="fas fa-eye"></i> </a></td>
+                    <button  @click="editarPromotion(record.id)">
+                    Editar
+                    </button>
+                    </td>
                 </tr>
             </table>
           </div>
@@ -64,6 +65,11 @@ export default {
         console.log(data)
       })
       .catch((error) => console.log(error))
+  },
+  methods: {
+    editarPromotion(id) {
+      this.$router.push('./editarPromotions/' + id)
+    }
   }
 }
 </script>

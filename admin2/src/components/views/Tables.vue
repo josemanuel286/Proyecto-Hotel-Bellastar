@@ -43,9 +43,10 @@
                       <td>Carnival</td>
                     </div>
                     <td> 
-                    <a id="editBtn" href="#"> <i class="fas fa-edit"></i> </a>
-                    <a id="deleteBtn" href="#"> <i class="fas fa-user-times"></i> </a>
-                    <a id="readBtn" href="#"> <i class="fas fa-eye"></i> </a></td>
+                    <button  @click="editarUser(record.id)">
+                    Editar
+                    </button>
+                    </td>
                 </tr>
               </tbody>
             </table>
@@ -79,6 +80,11 @@ export default {
         console.log(data)
       })
       .catch((error) => console.log(error))
+  },
+  methods: {
+    editarUser(id) {
+      this.$router.push('./editarRestaurants/' + id)
+    }
   }
 }
 </script>
