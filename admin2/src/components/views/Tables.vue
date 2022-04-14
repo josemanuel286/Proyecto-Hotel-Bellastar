@@ -36,13 +36,13 @@
                     <td>{{record.dia_hora_booking}}</td>
                     <td>{{record.solicitud_especial}}</td>
                     <td>{{record.number_people}}</td>
-                    <div v-if="record.restaurante_id=== 'https://apicodeword12.herokuapp.com/restaurantes/2/'">
+                    <div v-if="record.restaurante_id=== 'https://apicodeword12.herokuapp.com/restaurants/2/'">
                       <td>Frances</td>
                     </div>
-                    <div v-else-if="record.restaurante_id=== 'https://apicodeword12.herokuapp.com/restaurantes/1/'">
+                    <div v-else-if="record.restaurante_id=== 'https://apicodeword12.herokuapp.com/restaurants/1/'">
                       <td>Carnival</td>
                     </div>
-                    <td> 
+                    <td>
                     <button  @click="editarUser(record.id)">
                     Editar
                     </button>
@@ -65,7 +65,7 @@ export default {
     }
   },
   mounted() {
-    let url = 'https://apicodeword12.herokuapp.com/booking/'
+    let url = 'https://apicodeword12.herokuapp.com/bookings/'
     fetch(url, {
       method: 'Get',
       headers: {

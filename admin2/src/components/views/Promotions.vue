@@ -28,7 +28,7 @@
                     <td>{{record.descripcion}}</td>
                     <td>{{record.promocion_image}}</td>
                     <td>{{record.restaurante_id}}</td>
-                    <td> 
+                    <td>
                     <button  @click="editarPromotion(record.id)">
                     Editar
                     </button>
@@ -50,7 +50,7 @@ export default {
     }
   },
   mounted() {
-    let url = 'https://apicodeword12.herokuapp.com/promociones/'
+    let url = 'https://apicodeword12.herokuapp.com/promotions/'
     fetch(url, {
       method: 'Get',
       headers: {

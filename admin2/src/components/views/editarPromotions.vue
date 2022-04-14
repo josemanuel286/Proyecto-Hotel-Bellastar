@@ -58,8 +58,8 @@ export default {
     statusbool: false
   }),
   mounted() {
-    let id = this.$route.params.idUser
-    let url = 'https://apicodeword12.herokuapp.com/promociones/' + id
+    let id = this.$route.params.idPromotions
+    let url = 'https://apicodeword12.herokuapp.com/promotions/' + id
     fetch(url, {
       method: 'Get',
       headers: {
