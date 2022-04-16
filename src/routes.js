@@ -24,7 +24,7 @@ const routes = [
       {
         path: 'booking',
         component: bookingView
-      },
+      }
     ]
   },
   {
