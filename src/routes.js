@@ -9,49 +9,61 @@ import DashboardView from './components/views/Dashboard.vue'
 import TablesView from './components/views/Tables.vue'
 import UsersView from './components/views/Users.vue'
 import PromotionsView from './components/views/Promotions.vue'
+import bookingView from './components/viewsclient/booking.vue'
+import clientDashView from './components/viewsclient/Dashboardclient.vue'
 // Routes
 const routes = [
   {
-    path: '/login',
+    path: '/Dash/login',
     component: LoginView
   },
   {
     path: '/',
+    component: clientDashView,
+    children: [
+      {
+        path: 'booking',
+        component: bookingView
+      },
+    ]
+  },
+  {
+    path: '/Dash',
     component: DashView,
     children: [
       {
-        path: 'dashboard',
+        path: '/Dash/dashboard',
         alias: '',
         component: DashboardView,
         name: 'Dashboard',
         meta: {description: 'Overview of environment'}
       }, {
-        path: 'tables',
+        path: '/Dash/tables',
         component: TablesView,
         name: 'Tables',
         meta: {description: 'Simple and advance table in CoPilot'}
       }, {
-        path: 'users',
+        path: '/Dash/users',
         component: UsersView,
         name: 'Users',
         meta: {description: 'tablas de usuarios'}
       }, {
-        path: 'promotions',
+        path: '/Dash/promotions',
         component: PromotionsView,
         name: 'Promotions',
         meta: {description: 'tablas de promociones'}
       }, {
-        path: 'editarUsers/:idUser',
+        path: '/Dash/editarUsers/:idUser',
         component: EditarUsersView,
         name: 'editarUsers',
         meta: {description: 'tablas de editarUsers'}
       }, {
-        path: 'editarPromotions/:idPromotions',
+        path: '/Dash/editarPromotions/:idPromotions',
         component: EditarPromotionsView,
         name: 'editarPromotions',
         meta: {description: 'tablas de editarPromotions'}
       }, {
-        path: 'editarRestaurants/:idRestaurants',
+        path: '/Dash/editarRestaurants/:idRestaurants',
         component: EditarRestaurantsView,
         name: 'editarRestaurants',
         meta: {description: 'tablas de editarReservaciones'}

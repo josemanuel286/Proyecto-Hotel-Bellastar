@@ -1,20 +1,20 @@
 <template>
   <ul class="sidebar-menu">
     <li class="header">TOOLS</li>
-    <router-link tag="li" class="pageLink" to="/">
+    <router-link tag="li" class="pageLink" to="/Dash">
       <a>
         <i class="fa fa-desktop"></i>
         <span class="page">Inicio</span>
       </a>
     </router-link>
 
-    <router-link tag="li" class="pageLink" to="/tables">
+    <router-link tag="li" class="pageLink" to="/Dash/tables">
       <a>
         <i class="fa fa-table"></i>
         <span class="page">Restaurantes</span>
       </a>
     </router-link>
-        <router-link tag="li" class="pageLink" to="/promotions">
+        <router-link tag="li" class="pageLink" to="/Dash/promotions">
       <a>
         <i class="fa fa-table"></i>
         <span class="page">Promociones</span>
@@ -22,7 +22,7 @@
     </router-link>
 
     <li class="header">Administrador</li>
-    <router-link tag="li" class="pageLink" to="/users">
+    <router-link tag="li" class="pageLink" to="/Dash/users">
       <a>
         <i class="fa fa-tasks"></i>
         <span class="page">Usuarios</span>
@@ -30,7 +30,7 @@
     </router-link>
 
     <li class="header">PAGES</li>
-    <router-link tag="li" class="pageLink" to="/login">
+    <router-link tag="li" class="pageLink" to="/Dash/login">
       <a>
         <i class="fa fa-circle-o text-yellow"></i>
         <span class="page"> Login</span>

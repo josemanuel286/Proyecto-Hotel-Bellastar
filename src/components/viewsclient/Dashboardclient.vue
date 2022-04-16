@@ -83,19 +83,19 @@ $(document).ready(function(){
                         }
                     })
                     const data = await json.json()
-                    alert('Se ha registrado correctamente con el ID: ' + data.id )
+                  alert('Se ha registrado correctamente con el ID: ' + data.id)
                 })
-            })
+})
         </script> -->
         <script>
             fetch('https://apicodeword12.herokuapp.com/restaurantes/1/')
             .then(response => response.json())
             .then(data => {
-                let element = document.getElementById('tab1')
-                element.innerHTML = `
+              let element = document.getElementById('tab1')
+              element.innerHTML = `
                 <h1> ${data.name_restaurant} </h1>
                 <p> ${data.descripcion} </p>
                 <img src ='${data.restaurant_image}' >
-                ` 
+                `
             })
     </script>

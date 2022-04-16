@@ -76,7 +76,7 @@ export default {
               window.localStorage.setItem('token', token)
             }
 
-            this.$router.push(data.redirect ? data.redirect : '/')
+            this.$router.push(data.redirect ? data.redirect : '/Dash/')
           }
         })
         .catch(error => {

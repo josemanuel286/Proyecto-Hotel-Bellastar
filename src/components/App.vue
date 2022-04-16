@@ -16,13 +16,15 @@
       logout () {
         this.$store.commit('SET_USER', null)
         this.$store.commit('SET_TOKEN', null)
+        localStorage.removeItem('user')
+        localStorage.removeItem('token')
 
         if (window.localStorage) {
-          window.localStorage.setItem('user', null)
-          window.localStorage.setItem('token', null)
+          window.localStorage.removeItem('user')
+          window.localStorage.removeItem('token')
         }
 
-        this.$router.push('/login')
+        this.$router.push('./Login')
       }
     }
   }
