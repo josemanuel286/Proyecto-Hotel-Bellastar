@@ -5,7 +5,7 @@
             <div class="mobile-menu-btn"><i class="fa fa-bars"></i></div>
             <nav class="main-menu top-menu">
                 <ul>
-                    <router-link tag="li" class="pageLink" to="./Dashboardclient">
+                    <router-link tag="li" class="pageLink" to="./">
                      <a >Restaurantes</a> </router-link>
                     <router-link tag="li" class="pageLink" to="./booking">
                      <a >Reservaciones</a> </router-link>
