@@ -1,6 +1,9 @@
 <template>
+<div>
+    <clientheader></clientheader>
     <section>
-<div id="booking">
+        
+        <div id="booking">
             <div class="container">
                 <div class="section-header">
                     <h2>Reservaciones</h2>
@@ -88,5 +91,18 @@
         </div>
         <!-- Booking Section End -->
     </section>
+    </div>
 </template>
-<script></script>
+<script>
+import clientheader from './header.vue'
+export default {
+  components: {
+    clientheader
+  }
+
+}</script>
+<style>
+@import url(../../../static/css/style.css);
+@import url(../../../static/vendor/bootstrap/css/bootstrap.min.css);
+</style>
+

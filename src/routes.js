@@ -11,6 +11,8 @@ import UsersView from './components/views/Users.vue'
 import PromotionsView from './components/views/Promotions.vue'
 import bookingView from './components/viewsclient/booking.vue'
 import clientDashView from './components/viewsclient/Dashboardclient.vue'
+import headerView from './components/viewsclient/header.vue'
+import PromotionsClientView from './components/viewsclient/promotions.vue'
 // Routes
 const routes = [
   {
@@ -19,13 +21,19 @@ const routes = [
   },
   {
     path: '/',
-    component: clientDashView,
-    children: [
-      {
-        path: 'booking',
-        component: bookingView
-      }
-    ]
+    component: headerView
+  },
+  {
+    path: '/booking',
+    component: bookingView
+  },
+  {
+    path: '/promotions',
+    component: PromotionsClientView
+  },
+  {
+    path: '/Dashboardclient',
+    component: clientDashView
   },
   {
     path: '/Dash',
