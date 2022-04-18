@@ -22,9 +22,7 @@ export default {
 }
 </script>
 <style>
-@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900');
-@import url(../../../static/css/style.css);
 #booking{
-    background-color: aliceblue;
+    background-color:  #f2f2f2;
 }
 </style>

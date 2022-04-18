@@ -29,7 +29,7 @@ export default {
 }</script>
 <style>
 #promo{
-    background-color: aliceblue;
+    background-color: #f2f2f2;
 }
 </style>
 
