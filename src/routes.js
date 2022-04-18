@@ -3,7 +3,7 @@ import LoginView from './components/Login.vue'
 import NotFoundView from './components/404.vue'
 import EditarUsersView from './components/views/editarUsers.vue'
 import EditarPromotionsView from './components/views/editarPromotions.vue'
-import EditarRestaurantsView from './components/views/editarRestaurants.vue'
+import EditarBookingsView from './components/views/editarBookings.vue'
 // Import Views - Dash
 import DashboardView from './components/views/Dashboard.vue'
 import TablesView from './components/views/Tables.vue'
@@ -66,10 +66,10 @@ const routes = [
         name: 'editarPromotions',
         meta: {description: 'tablas de editarPromotions'}
       }, {
-        path: '/Dash/editarRestaurants/:idRestaurants',
-        component: EditarRestaurantsView,
-        name: 'editarRestaurants',
-        meta: {description: 'tablas de editarReservaciones'}
+        path: '/Dash/editarBookings/:idBookings',
+        component: EditarBookingsView,
+        name: 'editarBookings',
+        meta: {description: 'tablas de editarBookings'}
       }
     ]
   }, {

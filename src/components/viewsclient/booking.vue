@@ -49,9 +49,9 @@
                                     <div class="control-group col-md-3">
                                         <label>Selecciona tu restaurante</label><br>
                                         <select id="Rselection" v-model="records.restaurante_id">
-                                            <option value="1">selecciona</option>
-                                            <option value="1">Rosmarin</option>
-                                            <option value="2">Frances</option>
+                                            <option value="https://apicodeword12.herokuapp.com/restaurants/1/">selecciona</option>
+                                            <option value="https://apicodeword12.herokuapp.com/restaurants/1/">Rosmarin</option>
+                                            <option value="https://apicodeword12.herokuapp.com/restaurants/2/">Frances</option>
                                         </select>
                                     </div>
                                     <div class="control-group col-md-3">
@@ -105,11 +105,13 @@ export default {
         email: this.records.email,
         dia_hora_booking: this.records.dia_hora_booking,
         solicitud_especial: this.records.solicitud_especial,
-        number_people: this.records.number_people,
-        restaurante_id: this.records.restaurante_id
+        number_people: parseInt(this.records.number_people),
+        restaurante_id: this.records.restaurante_id,
+        status: 1
       }
+      console.log(dataRestaurants)
       fetch(url, {
-        method: 'POST',
+        method: 'Post',
         body: JSON.stringify(dataRestaurants),
         headers: {
           Authorization: `${localStorage.getItem('token')}`,
