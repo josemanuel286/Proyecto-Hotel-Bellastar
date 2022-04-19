@@ -53,7 +53,7 @@ export default {
     logout() {
       localStorage.removeItem('user')
       localStorage.removeItem('token')
-      this.$router.push('../Login')
+      this.$router.push('../Dash/Login')
     }
   }
 }

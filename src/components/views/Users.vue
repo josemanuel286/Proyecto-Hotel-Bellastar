@@ -61,7 +61,7 @@ export default {
     if (user) {
       this.getElements()
     } else {
-      this.$router.push('../Login')
+      this.$router.push('../Dash/Login')
       console.log(user)
       console.log(localStorage.getItem('user'))
     }
