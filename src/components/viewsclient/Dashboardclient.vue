@@ -13,7 +13,7 @@
         <div class="wrap">
             <ul class="tabs">
                 <li><a @click="mostrarRosmarinoFunc()"><span class="fa fa-star" style="color:yellow"></span><span style="color:yellow" class="tab-text">ROSMARINO</span></a></li>
-                <li><a href="#tab2"><span class="fa fa-cutlery"></span><span class="tab-text">PLATO F</span></a></li>
+                <li><a @click="mostrarMenuRosmarinoFunc()"><span class="fa fa-cutlery" style="color:yellow"></span><span style="color:yellow" class="tab-text">Menú</span></a></li>
 
             </ul>
     
@@ -27,10 +27,10 @@
                         </div>
                     </div>
                 </article>
-                <article id="tab2">
-                    <h1>Platillos Fuertes</h1>
+                <article v-if="mostrarMenuRosmarino" id="tab2">
+                    <h1>Menú</h1>
                     <div v-for="record in records_menus" :key="record.id">
-                        <div v-if="record.restaurante_id=== 'https://apicodeword12.herokuapp.com/menus/1/'">
+                        <div v-if="record.restaurante_id=== 'https://apicodeword12.herokuapp.com/restaurants/1/'">
                         <p>{{record.nombre_platillo}}</p>
                         <p>{{record.ingredientes}}</p>
                         </div>
@@ -42,14 +42,14 @@
         <div class="wrap">
             <ul class="tabs">
                 <li><a class="hov" @click="mostrarFrancesFunc()"></a><span class="fa fa-star"></span><span class="tab-text">Frances</span></a></li>
-                <li><a @click="mostrarMenuFrancesFunc()"><span class="fa fa-cutlery"></span><span class="tab-text">PLATO F</span></a></li>
+                <li><a class="hov" @click="mostrarMenuFrancesFunc()"><span class="fa fa-cutlery"></span><span class="tab-text">PLATO F</span></a></li>
             </ul>
     
             <div class="secciones">
                 <article id="tab3">
                     <h1>Restaurante Frances</h1>
                     <div v-for="record in records_menus" :key="record.id">
-                        <div v-if="record.restaurante_id=== 'https://apicodeword12.herokuapp.com/restaurants/2/'">
+                        <div v-if="record.restaurante_id=== 'https://apicodeword12.herokuapp.com/menus/2/'">
                         <p>{{record.nombre_platillo}}</p>
                         <p>{{record.ingredientes}}</p>
                         </div>
@@ -58,7 +58,7 @@
                 <article v-if="mostrarMenuFrances" id="tab4">
                     <h1>Platillos Fuertes</h1>
                     <div v-for="record in records_menus" :key="record.id">
-                        <div v-if="record.restaurante_id=== 'https://apicodeword12.herokuapp.com/menus/2/'">
+                        <div v-if="record.restaurante_id=== 'https://apicodeword12.herokuapp.com/restaurants/2/'">
                         <p>{{record.nombre_platillo}}</p>
                         <p>{{record.ingredientes}}</p>
                         </div>
@@ -79,6 +79,7 @@ export default {
     record: [],
     statusbool: false,
     mostrarRosmarino: true,
+    mostrarMenuRosmarino: false,
     mostrarMenuFrances: false
   }),
   components: {
@@ -132,6 +133,9 @@ export default {
     },
     mostrarRosmarinoFunc: function() {
       this.mostrarRosmarino = !this.mostrarRosmarino
+    },
+    mostrarMenuRosmarinoFunc: function() {
+      this.mostrarMenuRosmarino = !this.mostrarMenuRosmarino
     }
   }
 
