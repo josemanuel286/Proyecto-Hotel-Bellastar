@@ -43,7 +43,7 @@
                       <td>Carnival</td>
                     </div>
                     <td>
-                    <button class="btn btn-success" @click="editarUser(record.id)">
+                    <button  @click="editarUser(record.id)">
                     Editar
                     </button>
                     </td>
@@ -91,7 +91,7 @@ export default {
   },
   methods: {
     editarUser(id) {
-      this.$router.push('./editarBookings/' + id)
+      this.$router.push('./editarRestaurants/' + id)
     }
   }
 }

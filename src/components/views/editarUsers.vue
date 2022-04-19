@@ -53,10 +53,9 @@
         class=""
         :checked="this.statusbool"
         v-model ="statusbool"
-      ><br>
-      <br>
-      <button class="btn btn-success" @click="guardar()" value="Guardar">Guardar</button>
-      <button class="btn btn-danger" @click="cancelar()" value="Cancelar">Cancelar</button>
+      >
+      <button @click="guardar()" value="Guardar" />
+      <button @click="cancelar()" value="Cancelar" />
     </form>
   </section>
 </template>

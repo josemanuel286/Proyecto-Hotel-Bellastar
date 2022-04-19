@@ -11,7 +11,7 @@
     <router-link tag="li" class="pageLink" to="/Dash/tables">
       <a>
         <i class="fa fa-table"></i>
-        <span class="page">Reservaciones</span>
+        <span class="page">Restaurantes</span>
       </a>
     </router-link>
         <router-link tag="li" class="pageLink" to="/Dash/promotions">
@@ -31,31 +31,16 @@
 
     <li class="header">PAGES</li>
     <router-link tag="li" class="pageLink" to="/Dash/login">
-      <a >
+      <a>
         <i class="fa fa-circle-o text-yellow"></i>
         <span class="page"> Login</span>
       </a>
     </router-link>
-
-    <router-link tag="li" class="pageLink" to="/Dash/login">
-      <a @click="logout()">
-        <i class="fa fa-circle-o text-yellow"></i>
-        <span class="page"> Logout</span>
-      </a>
-    </router-link>
-
   </ul>
 </template>
 <script>
 export default {
-  name: 'SidebarMenu',
-  methods: {
-    logout() {
-      localStorage.removeItem('user')
-      localStorage.removeItem('token')
-      this.$router.push('../Login')
-    }
-  }
+  name: 'SidebarMenu'
 }
 </script>
 <style>

@@ -12,57 +12,82 @@
                 </div>  
         <div class="wrap">
             <ul class="tabs">
-                <li><a @click="mostrarRosmarinoFunc()"><span class="fa fa-star" style="color:yellow"></span><span style="color:yellow" class="tab-text">ROSMARINO</span></a></li>
+                <li><a href="#tab1"><span class="fa fa-star"></span><span class="tab-text">ROSMARINO</span></a></li>
                 <li><a href="#tab2"><span class="fa fa-cutlery"></span><span class="tab-text">PLATO F</span></a></li>
 
             </ul>
     
             <div class="secciones">
-                <article v-if="mostrarRosmarino" id="tab1">
-                    <h1>Restaurante Rosmarino</h1>
-                    <div v-for="record in records_menus" :key="record.id">
-                        <div v-if="record.restaurante_id=== 'https://apicodeword12.herokuapp.com/restaurants/1/'">
-                        <p>{{record.nombre_platillo}}</p>
-                        <p>{{record.ingredientes}}</p>
-                        </div>
-                    </div>
+                <article id="tab1">
+                    
+                   <!-- <h1>ROSMARINO</h1>
+
+                    <p>Carnibal es un lugar para compartir momentos únicos. Es una experiencia gastronómica como ninguna otra. Deja volar tu imaginación con
+                        deliciosos aromas y sabores. En Carnibal la innovación y la creatividad son las que nos guían cada día. Nuestro chef se esfuerza por 
+                        crear exquisitos platos nuevos y emocionantes con algunos de los ingredientes más frescos y puros.</p>
+    
+
+
+                        <img src="img/restaurants/ceviches.jpg">
+                        <br>
+                        <div id="reservar">
+                            <center><button type="button" class="btn btn-warning"><a href="booking.html">Reservar</a></button></center>
+                        </div> -->
+
                 </article>
                 <article id="tab2">
                     <h1>Platillos Fuertes</h1>
-                    <div v-for="record in records_menus" :key="record.id">
-                        <div v-if="record.restaurante_id=== 'https://apicodeword12.herokuapp.com/menus/1/'">
-                        <p>{{record.nombre_platillo}}</p>
-                        <p>{{record.ingredientes}}</p>
-                        </div>
-                    </div>
+                    <hr>
+                    <p>SOPA DE MARISCOS<br>
+                    Aceituna sin hueso marinadas con jugo de naranja, limon y especies.</p>
+                    <p>CEVICHE<br>
+                    Camarones fritos. sazonados con especies y harissa.</p>
+                    <p>COCTEL DE CAMARÓN<br>
+                    Albondigas de pescado con pimenton dulce y semillas de cilantro.</p>
+                    <p>LANGOSTA<br>
+                    Pasta suave de aceitunas negras y alcaparras, se acompaña con pan pita.</p>
+                    <p>SOPA DE PESCADO<br></p>
                 </article>
             </div>
         </div>
 
         <div class="wrap">
             <ul class="tabs">
-                <li><a class="hov" @click="mostrarFrancesFunc()"></a><span class="fa fa-star"></span><span class="tab-text">Frances</span></a></li>
-                <li><a @click="mostrarMenuFrancesFunc()"><span class="fa fa-cutlery"></span><span class="tab-text">PLATO F</span></a></li>
+                <li><a href="#tab3"><span class="fa fa-star"></span><span class="tab-text">PENDIENTE</span></a></li>
+                <li><a href="#tab4"><span class="fa fa-cutlery"></span><span class="tab-text">PLATO F</span></a></li>
             </ul>
     
             <div class="secciones">
                 <article id="tab3">
                     <h1>Restaurante Frances</h1>
-                    <div v-for="record in records_menus" :key="record.id">
-                        <div v-if="record.restaurante_id=== 'https://apicodeword12.herokuapp.com/restaurants/2/'">
-                        <p>{{record.nombre_platillo}}</p>
-                        <p>{{record.ingredientes}}</p>
+                    <p>Carnibal es un lugar para compartir momentos únicos. Es una experiencia gastronómica como ninguna otra. Deja volar tu imaginación con
+                        deliciosos aromas y sabores. En Carnibal la innovación y la creatividad son las que nos guían cada día. Nuestro chef se esfuerza por 
+                        crear exquisitos platos nuevos y emocionantes con algunos de los ingredientes más frescos y puros.</p>
+
+                        <!--<img src="img/restaurants/carnival.jpg">-->
+                        <br>
+                        <div id="reservar">
+                            <center><button class="btn btn-warning" @click="booking()">Reservar</button></center>
                         </div>
-                    </div>
+
                 </article>
-                <article v-if="mostrarMenuFrances" id="tab4">
+                <article id="tab4">
                     <h1>Platillos Fuertes</h1>
-                    <div v-for="record in records_menus" :key="record.id">
-                        <div v-if="record.restaurante_id=== 'https://apicodeword12.herokuapp.com/menus/2/'">
-                        <p>{{record.nombre_platillo}}</p>
-                        <p>{{record.ingredientes}}</p>
-                        </div>
-                    </div>
+                    <hr>
+
+
+
+
+                    <p>ACEITUNAS MARINADAS<br>
+                    Aceituna sin hueso marinadas con jugo de naranja, limon y especies.</p>
+                    <p>CREVETTES DE PROVENCE<br>
+                    Camarones fritos. sazonados con especies y harissa.</p>
+                    <p>KEFTDAKIA<br>
+                    Albondigas de pescado con pimenton dulce y semillas de cilantro.</p>
+                    <p>TAPENADE<br>
+                    Pasta suave de aceitunas negras y alcaparras, se acompaña con pan pita.</p>
+                    <p>TZATZIKI<br>
+                    Crema suave de jocoque con eneldo, menta y pepino.</p>
                 </article>
             </div>
         </div>
@@ -73,73 +98,17 @@
 <script>
 import clientheader from './header.vue'
 export default {
-  data: () => ({
-    records_restaurants: [],
-    records_menus: [],
-    record: [],
-    statusbool: false,
-    mostrarRosmarino: true,
-    mostrarMenuFrances: false
-  }),
   components: {
     clientheader
-  },
-  mounted() {
-    this.Restaurants()
-    this.Menus()
   },
   methods: {
     booking() {
       this.$router.push('./booking')
-    },
-    Restaurants() {
-      let url = 'https://apicodeword12.herokuapp.com/restaurants/'
-      fetch(url, {
-        method: 'Get',
-        headers: {
-          'Authorization': `${localStorage.getItem('token')}`,
-          'Content-type': 'application/json',
-          'Accept': 'application/json',
-          'Access-Control-Request-Headers': 'text/plain'
-        }})
-        .then((response) => response.json())
-        .then((data) => {
-          this.records_restaurants = data
-          console.log(data)
-        })
-        .catch((error) => console.log(error))
-    },
-    Menus() {
-      let url = 'https://apicodeword12.herokuapp.com/menus/'
-      fetch(url, {
-        method: 'Get',
-        headers: {
-          'Authorization': `${localStorage.getItem('token')}`,
-          'Content-type': 'application/json',
-          'Accept': 'application/json',
-          'Access-Control-Request-Headers': 'text/plain'
-        }})
-        .then((response) => response.json())
-        .then((data) => {
-          this.records_menus = data
-          console.log(data)
-        })
-        .catch((error) => console.log(error))
-    },
-    mostrarMenuFrancesFunc() {
-    },
-    mostrarFrancesFunc() {
-    },
-    mostrarRosmarinoFunc: function() {
-      this.mostrarRosmarino = !this.mostrarRosmarino
     }
   }
 
 }
 </script>
 <style>
-.hov:hover {
-    color:aqua
-}
 @import url(../../../static/css/estilos.css);
 </style>

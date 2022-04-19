@@ -28,7 +28,7 @@
         id="telefono"
         required
         placeholder=""
-      /><br>
+      />
       <label class="form-label" for="email">Email</label>
       <input
         v-model="records.email"
@@ -39,7 +39,7 @@
       />
       <label class="form-label" for="dia_hora_booking">Dia y hora</label>
       <input
-        v-model="records.dia_hora_booking"
+        v-model="records.email"
         class="form-input"
         type="dia_hora_booking"
         id="dia_hora_booking"
@@ -47,7 +47,7 @@
       />
       <label class="form-label" for="solicitud_especial">Solicitud Especial</label>
       <input
-        v-model="records.solicitud_especial"
+        v-model="records.email"
         class="form-input"
         type="solicitud_especial"
         id="solicitud_especial"
@@ -55,7 +55,7 @@
       />
       <label class="form-label" for="number_people">numero de personas</label>
       <input
-        v-model="records.number_people"
+        v-model="records.email"
         class="form-input"
         type="number_people"
         id="number_people"
@@ -63,7 +63,7 @@
       />
       <label class="form-label" for="restaurante_id">Id</label>
       <input
-        v-model="records.restaurante_id"
+        v-model="records.email"
         class="form-input"
         type="restaurante_id"
         id="restaurante_id"
@@ -76,10 +76,9 @@
         class=""
         :checked="this.statusbool"
         v-model ="statusbool"
-      ><br>
-      <br>
-      <button class="btn btn-success" @click="guardar()" value="Guardar">Guardar</button>
-      <button class="btn btn-danger" @click="cancelar()" value="Cancelar">Cancelar</button>
+      >
+      <button @click="guardar()" value="Guardar" />
+      <button @click="cancelar()" value="Cancelar" />
     </form>
     </section>
 </template>
@@ -90,8 +89,8 @@ export default {
     statusbool: false
   }),
   mounted() {
-    let id = this.$route.params.idBookings
-    let url = 'https://apicodeword12.herokuapp.com/bookings/' + id
+    let id = this.$route.params.idUser
+    let url = 'https://apicodeword12.herokuapp.com/restaurantes/' + id
     fetch(url, {
       method: 'Get',
       headers: {
@@ -114,8 +113,8 @@ export default {
   methods: {
     guardar() {
       let st = this.statusbool === true ? 1 : 2
-      let id = this.$route.params.idBookings
-      let url = 'https://apicodeword12.herokuapp.com/bookings/' + id + '/'
+      let id = this.$route.params.idUser
+      let url = 'https://apicodeword12.herokuapp.com/restaurantes/' + id + '/'
       const dataRestaurants = {
         nombre_usuario: this.records.nombre_usuario,
         apellido_usuario: this.records.apellido_usuario,
