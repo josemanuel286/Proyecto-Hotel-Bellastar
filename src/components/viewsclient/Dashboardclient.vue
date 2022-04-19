@@ -20,10 +20,9 @@
             <div class="secciones">
                 <article v-if="mostrarRosmarino" id="tab1">
                     <h1>Restaurante Rosmarino</h1>
-                    <div v-for="record in records_menus" :key="record.id">
-                        <div v-if="record.restaurante_id=== 'https://apicodeword12.herokuapp.com/restaurants/1/'">
-                        <p>{{record.nombre_platillo}}</p>
-                        <p>{{record.ingredientes}}</p>
+                    <div v-for="record in records_restaurants" :key="record.id">
+                        <div v-if="record.id=== 1">
+                        <p>{{record.descripcion}}</p>
                         </div>
                     </div>
                 </article>
@@ -41,17 +40,16 @@
 
         <div class="wrap">
             <ul class="tabs">
-                <li><a class="hov" @click="mostrarFrancesFunc()"></a><span class="fa fa-star"></span><span class="tab-text">Frances</span></a></li>
-                <li><a class="hov" @click="mostrarMenuFrancesFunc()"><span class="fa fa-cutlery"></span><span class="tab-text">PLATO F</span></a></li>
+                <li><a class="hov" @click="mostrarFrancesFunc()"><span class="fa fa-star" style="color:yellow"></span><span style="color:yellow" class="tab-text">FRANCES</span></a></li>
+                <li><a class="hov" @click="mostrarMenuFrancesFunc()"><span class="fa fa-cutlery" style="color:yellow"></span><span style="color:yellow" class="tab-text">PLATO F</span></a></li>
             </ul>
     
             <div class="secciones">
-                <article id="tab3">
+                <article v-if="mostrarFrances" id="tab3">
                     <h1>Restaurante Frances</h1>
-                    <div v-for="record in records_menus" :key="record.id">
-                        <div v-if="record.restaurante_id=== 'https://apicodeword12.herokuapp.com/menus/2/'">
-                        <p>{{record.nombre_platillo}}</p>
-                        <p>{{record.ingredientes}}</p>
+                    <div v-for="record in records_restaurants" :key="record.id">
+                        <div v-if="record.id=== 2">
+                        <p>{{record.descripcion}}</p>
                         </div>
                     </div>
                 </article>
@@ -79,6 +77,7 @@ export default {
     record: [],
     statusbool: false,
     mostrarRosmarino: true,
+    mostrarFrances: true,
     mostrarMenuRosmarino: false,
     mostrarMenuFrances: false
   }),
@@ -106,7 +105,7 @@ export default {
         .then((response) => response.json())
         .then((data) => {
           this.records_restaurants = data
-          console.log(data)
+          console.log(this.records_restaurants)
         })
         .catch((error) => console.log(error))
     },
@@ -123,19 +122,25 @@ export default {
         .then((response) => response.json())
         .then((data) => {
           this.records_menus = data
-          console.log(data)
+          console.log(this.records_menus)
         })
         .catch((error) => console.log(error))
     },
-    mostrarMenuFrancesFunc() {
+    mostrarFrancesFunc: function() {
+      this.mostrarFrances = !this.mostrarFrances
+      this.mostrarMenuFrances = false
     },
-    mostrarFrancesFunc() {
+    mostrarMenuFrancesFunc: function() {
+      this.mostrarMenuFrances = !this.mostrarMenuFrances
+      this.mostrarFrances = false
     },
     mostrarRosmarinoFunc: function() {
       this.mostrarRosmarino = !this.mostrarRosmarino
+      this.mostrarMenuRosmarino = false
     },
     mostrarMenuRosmarinoFunc: function() {
       this.mostrarMenuRosmarino = !this.mostrarMenuRosmarino
+      this.mostrarRosmarino = false
     }
   }
 

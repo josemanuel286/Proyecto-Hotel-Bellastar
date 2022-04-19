@@ -121,6 +121,7 @@ export default {
         }
       })
         .then((res) => res.json())
+      this.$router.push('./booking')
     }
   }
 }
