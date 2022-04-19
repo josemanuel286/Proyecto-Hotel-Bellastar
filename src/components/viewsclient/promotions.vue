@@ -25,8 +25,8 @@ export default {
   components: {
     clientheader
   }
-
-}</script>
+}
+</script>
 <style>
 #promo{
     background-color: #f2f2f2;

@@ -1,7 +1,7 @@
 <template>
     <section>
         <header id="header">
-            <div class="phone"><i class="fa fa-phone"></i>+52 1 998 242 2755</div>
+            <a href="https://api.whatsapp.com/send/?phone=5219982422755&text&app_absent=0"><div class="phone"><i class="fa fa-phone"></i>+52 1 998 242 2755</div></a>
             <div class="mobile-menu-btn"><i class="fa fa-bars"></i></div>
             <nav class="main-menu top-menu">
                 <ul>
