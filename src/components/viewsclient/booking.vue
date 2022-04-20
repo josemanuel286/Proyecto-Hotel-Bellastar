@@ -1,10 +1,9 @@
 <template>
 <div>
     <clientheader></clientheader>
-    <section>
         
         <div id="booking">
-            <div class="container">
+            <div>
                 <div class="section-header">
                     <h2>Reservaciones</h2>
                     <p>
@@ -49,7 +48,7 @@
                                     <div class="control-group col-md-3">
                                         <label>Selecciona tu restaurante</label><br>
                                         <select id="Rselection" v-model="records.restaurante_id">
-                                            <option value="https://apicodeword12.herokuapp.com/restaurants/1/">selecciona</option>
+                                            <option>selecciona</option>
                                             <option value="https://apicodeword12.herokuapp.com/restaurants/1/">Rosmarin</option>
                                             <option value="https://apicodeword12.herokuapp.com/restaurants/2/">Frances</option>
                                         </select>
@@ -57,7 +56,7 @@
                                     <div class="control-group col-md-3">
                                         <label>Número de Personas</label><br>
                                         <select id="number_people" v-model="records.number_people">
-                                            <option value="1">selecciona</option>
+                                            <option value="0">selecciona</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -82,7 +81,6 @@
             </div>
         </div>
         <!-- Booking Section End -->
-    </section>
     </div>
 </template>
 <script>
