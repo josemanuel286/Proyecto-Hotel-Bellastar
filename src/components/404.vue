@@ -1,7 +1,5 @@
 <template>
   <div id="notFound">
-    <img src="/static/img/logo.png" class="center-block logo">
-
     <div class="text-center col-sm-12">
       <h1>You are lost.</h1>
       <h4>This page doesn't exist.</h4>
