@@ -8,7 +8,7 @@ import VueRouter from 'vue-router'
 import { sync } from 'vuex-router-sync'
 import routes from './routes'
 import store from './store'
-
+import { publicPath } from '../vue.config'
 // Import Helpers for filters
 import { domain, count, prettyDate, pluralize } from './filters'
 
@@ -27,7 +27,7 @@ Vue.use(VueRouter)
 var router = new VueRouter({
   routes: routes,
   mode: 'history',
-  base: 'Proyecto-Hotel-Bellastar',
+  base: publicPath,
   linkExactActiveClass: 'active',
   scrollBehavior: function(to, from, savedPosition) {
     return savedPosition || { x: 0, y: 0 }

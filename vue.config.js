@@ -1,3 +1,4 @@
 module.exports = {
-    publicPath: '/Proyecto-Hotel-Bellastar/'
-}
+    /* ... */
+    publicPath: process.env.NODE_ENV === 'production' ? '/Proyecto-Hotel-Bellastar/' : '/'
+  }
