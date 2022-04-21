@@ -27,6 +27,7 @@ Vue.use(VueRouter)
 var router = new VueRouter({
   routes: routes,
   mode: 'history',
+  base: 'Proyecto-Hotel-Bellastar',
   linkExactActiveClass: 'active',
   scrollBehavior: function(to, from, savedPosition) {
     return savedPosition || { x: 0, y: 0 }
