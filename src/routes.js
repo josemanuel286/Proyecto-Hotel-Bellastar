@@ -15,58 +15,58 @@ import PromotionsClientView from './components/viewsclient/promotions.vue'
 // Routes
 const routes = [
   {
-    path: '/Dash/login',
+    path: 'Proyecto-Hotel-Bellastar/Dash/login',
     component: LoginView
   },
   {
-    path: '/',
+    path: 'Proyecto-Hotel-Bellastar/',
     component: clientDashView
   },
   {
-    path: '/booking',
+    path: 'Proyecto-Hotel-Bellastar/booking',
     component: bookingView
   },
   {
-    path: '/promotions',
+    path: 'Proyecto-Hotel-Bellastar/promotions',
     component: PromotionsClientView
   },
   {
-    path: '/Dash',
+    path: 'Proyecto-Hotel-Bellastar/Dash',
     component: DashView,
     children: [
       {
-        path: '/Dash/dashboard',
+        path: 'Proyecto-Hotel-Bellastar/Dash/dashboard',
         alias: '',
         component: DashboardView,
         name: 'Dashboard',
         meta: {description: 'Overview of environment'}
       }, {
-        path: '/Dash/tables',
+        path: 'Proyecto-Hotel-Bellastar/Dash/tables',
         component: TablesView,
         name: 'Tables',
         meta: {description: 'Simple and advance table in CoPilot'}
       }, {
-        path: '/Dash/users',
+        path: 'Proyecto-Hotel-Bellastar/Dash/users',
         component: UsersView,
         name: 'Users',
         meta: {description: 'tablas de usuarios'}
       }, {
-        path: '/Dash/promotions',
+        path: 'Proyecto-Hotel-Bellastar/Dash/promotions',
         component: PromotionsView,
         name: 'Promotions',
         meta: {description: 'tablas de promociones'}
       }, {
-        path: '/Dash/editarUsers/:idUser',
+        path: 'Proyecto-Hotel-Bellastar/Dash/editarUsers/:idUser',
         component: EditarUsersView,
         name: 'editarUsers',
         meta: {description: 'tablas de editarUsers'}
       }, {
-        path: '/Dash/editarPromotions/:idPromotions',
+        path: 'Proyecto-Hotel-Bellastar/Dash/editarPromotions/:idPromotions',
         component: EditarPromotionsView,
         name: 'editarPromotions',
         meta: {description: 'tablas de editarPromotions'}
       }, {
-        path: '/Dash/editarBookings/:idBookings',
+        path: 'Proyecto-Hotel-Bellastar/Dash/editarBookings/:idBookings',
         component: EditarBookingsView,
         name: 'editarBookings',
         meta: {description: 'tablas de editarBookings'}
